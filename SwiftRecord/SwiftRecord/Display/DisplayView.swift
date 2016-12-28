@@ -37,7 +37,7 @@ class DisplayView: UIView {
         }
         
 //        print("(self.ballLabel?.frame.origin.y)! is \((self.ballLabel?.frame.origin.y)!)")
-        print("controlY is \(controlY)")
+//        print("controlY is \(controlY)")
         
         let endPoint:CGPoint = CGPoint.init(x: UIScreen.main.bounds.size.width, y: 0)
         let controlPoint:CGPoint = CGPoint.init(x: UIScreen.main.bounds.size.width / 2, y: controlY)

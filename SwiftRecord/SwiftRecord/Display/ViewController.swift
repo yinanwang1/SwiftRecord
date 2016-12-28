@@ -53,8 +53,8 @@ class ViewController: UIViewController
         
         UIView.animate(withDuration: 2,
                        delay: 0.0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0.1,
+                       usingSpringWithDamping: 0.9,
+                       initialSpringVelocity: 0.3,
                        options: UIViewAnimationOptions.curveEaseInOut,
                        animations: {
                         self.view.layoutIfNeeded()
