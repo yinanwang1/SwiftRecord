@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bnp-bZ-ajm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1XN-Cy-bjp">
+            <objects>
+                <navigationController id="bnp-bZ-ajm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aey-J8-SwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AT7-qG-v0v" kind="relationship" relationship="rootViewController" id="0PD-me-xjG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CeX-0B-xag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="154"/>
+        </scene>
+        <!--岛屿-->
+        <scene sceneID="i94-yC-uqp">
+            <objects>
+                <viewController id="AT7-qG-v0v" customClass="FoodfillViewController" customModule="SwiftRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="STh-EM-A63"/>
+                        <viewControllerLayoutGuide type="bottom" id="SVF-dE-xDl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jul-Ca-5K7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-QZ-6cN">
+                                <rect key="frame" x="16" y="72" width="343" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="岛屿的个数为：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fra-8Y-Rsa">
+                                <rect key="frame" x="36" y="618" width="122" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="5me-Eh-YGW"/>
+                                    <constraint firstAttribute="height" constant="21" id="vvR-Po-j0l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0q0-yz-d7F">
+                                <rect key="frame" x="181" y="618" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-Ot-U7Z">
+                                <rect key="frame" x="297" y="613" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hfI-Ki-qAC"/>
+                                    <constraint firstAttribute="width" constant="31" id="vkn-oQ-t8t"/>
+                                </constraints>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="onClickStartBtn:" destination="AT7-qG-v0v" eventType="touchUpInside" id="RBH-t3-QNU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0q0-yz-d7F" firstAttribute="bottom" secondItem="Fra-8Y-Rsa" secondAttribute="bottom" id="2ZT-aA-OZC"/>
+                            <constraint firstItem="SVF-dE-xDl" firstAttribute="top" secondItem="Fra-8Y-Rsa" secondAttribute="bottom" constant="28" id="4Pf-HQ-ubd"/>
+                            <constraint firstItem="3Tr-QZ-6cN" firstAttribute="trailing" secondItem="Jul-Ca-5K7" secondAttribute="trailingMargin" id="7AY-lL-6Wy"/>
+                            <constraint firstItem="0q0-yz-d7F" firstAttribute="leading" secondItem="Fra-8Y-Rsa" secondAttribute="trailing" constant="23" id="Awg-D6-bwH"/>
+                            <constraint firstItem="3Tr-QZ-6cN" firstAttribute="leading" secondItem="Jul-Ca-5K7" secondAttribute="leadingMargin" id="Bmx-GH-aLs"/>
+                            <constraint firstItem="0q0-yz-d7F" firstAttribute="top" secondItem="3Tr-QZ-6cN" secondAttribute="bottom" constant="32" id="Lca-ye-vDT"/>
+                            <constraint firstItem="0q0-yz-d7F" firstAttribute="top" secondItem="Fra-8Y-Rsa" secondAttribute="top" id="Pbp-jd-sLD"/>
+                            <constraint firstItem="3Tr-QZ-6cN" firstAttribute="top" secondItem="STh-EM-A63" secondAttribute="bottom" constant="8" id="iLb-X6-DQz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vwU-Ot-U7Z" secondAttribute="trailing" constant="31" id="rAV-l7-0mJ"/>
+                            <constraint firstItem="Fra-8Y-Rsa" firstAttribute="leading" secondItem="Jul-Ca-5K7" secondAttribute="leadingMargin" constant="20" id="uEZ-Ef-xdo"/>
+                            <constraint firstItem="SVF-dE-xDl" firstAttribute="top" secondItem="vwU-Ot-U7Z" secondAttribute="bottom" constant="24" id="uMS-Il-8ao"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="岛屿" id="2p0-ml-1rb"/>
+                    <connections>
+                        <outlet property="foodfillTextView" destination="3Tr-QZ-6cN" id="Pdd-cn-d3j"/>
+                        <outlet property="resultLabel" destination="0q0-yz-d7F" id="SRR-Gq-LXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hl7-UV-4uP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312.80000000000001" y="152.47376311844079"/>
+        </scene>
+    </scenes>
+</document>
