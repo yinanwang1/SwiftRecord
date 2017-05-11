@@ -83,17 +83,22 @@ class WolfViewController: UIViewController {
                 print("hereToThereArr i is \(i)")
                 
                 let process = hereToThereArr[i]
+                let prePreocess = thereToHereArr[i]
                 
                 if isValid(process: process)
                 {
                     if (0 < (arr?.count)!)
-                        && (arr?.lastObject is ProcessHereToThere)
-                        && (process == arr?.lastObject as! ProcessHereToThere)
                     {
-                        continue;
+                        let tempProcess = arr?.lastObject as! ProcessTHereToHere
+                        
+                        if (prePreocess == tempProcess)
+                        {
+                            continue;
+                        }
                     }
                     
                     arr?.add(process)
+                    operation(process: process)
                     
                     if 0 == i {
                         start(index: index)
@@ -111,17 +116,22 @@ class WolfViewController: UIViewController {
                 print("thereToHereArr i is \(i)")
                 
                 let process = thereToHereArr[i]
+                let prePreocess = hereToThereArr[i]
                 
                 if isValid(process: process)
                 {
                     if (0 < (arr?.count)!)
-                        && (arr?.lastObject is ProcessTHereToHere)
-                        && process == arr?.lastObject as! ProcessTHereToHere
                     {
-                        continue;
+                        let tempProcess = arr?.lastObject as! ProcessHereToThere
+                        
+                        if prePreocess == tempProcess
+                        {
+                            continue
+                        }
                     }
                     
                     arr?.add(process)
+                    operation(process: process)
                     
                     if 0 == i {
                         start(index: index)
@@ -242,68 +252,42 @@ class WolfViewController: UIViewController {
         print("isValid ProcessHereToThere")
         
         let hereArr:NSMutableArray = NSMutableArray.init(array: stayHERE());
-        let thereArr:NSMutableArray = NSMutableArray.init(array: stayTHERE());
         
         switch process {
         case .FarmerFromHereToThere:
             
             print("FarmerFromHereToThere")
             
-            if hereArr.contains(farmer)
-            {
-                hereArr.remove(farmer)
-                thereArr.add(farmer)
-                
-                farmer.sitStatus = .THERE
-                
-                return true
-            } else {
-                return false
-            }
+            return true
             
         case .FarmerWithWolfFromHereToThere:
             print("FarmerWithWolfFromHereToThere")
             
-            if hereArr.contains(wolf)
+            if hereArr.contains(sheep)
+               && hereArr.contains(vegetable)
             {
-                hereArr.remove(wolf)
-                thereArr.add(wolf)
-                
-                wolf.sitStatus = .THERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
+                return true
+            }
+            else
+            {
                 return false
             }
             
         case .FarmerWithSheepFromHereToThere:
             print("FarmerWithSheepFromHereToThere")
             
-            if hereArr.contains(sheep)
-            {
-                hereArr.remove(sheep)
-                thereArr.add(sheep)
-                
-                sheep.sitStatus = .THERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
-                return false
-            }
+            return true
             
         case .FarmerWithVegetableFromHereToThere:
             print("FarmerWithVegetableFromHereToThere")
             
-            if hereArr.contains(vegetable)
-            {
-                hereArr.remove(vegetable)
-                thereArr.add(vegetable)
-                
-                vegetable.sitStatus = .THERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
+            if hereArr.contains(wolf)
+               && hereArr.contains(sheep){
                 return false
+            }
+            else
+            {
+                return true
             }
         }
         
@@ -312,8 +296,7 @@ class WolfViewController: UIViewController {
     private func isValid(process:ProcessTHereToHere) -> Bool
     {
         print("isValid ProcessTHereToHere")
-        
-        let hereArr:NSMutableArray = NSMutableArray.init(array: stayHERE());
+
         let thereArr:NSMutableArray = NSMutableArray.init(array: stayTHERE());
         
         switch process {
@@ -321,95 +304,85 @@ class WolfViewController: UIViewController {
             
             print("FarmerFromThereToHere")
             
-            if thereArr.contains(farmer)
-            {
-                thereArr.remove(farmer)
-                hereArr.add(farmer)
-                
-                farmer.sitStatus = .HERE
-                
-                return true
-            } else {
-                return false
-            }
+            return true
             
         case .FarmerWithWolfFromThereToHere:
             print("FarmerWithWolfFromThereToHere")
             
-            if thereArr.contains(wolf)
+            if thereArr.contains(sheep)
+                && thereArr.contains(vegetable)
             {
-                thereArr.remove(wolf)
-                hereArr.add(wolf)
-                
-                wolf.sitStatus = .HERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
                 return false
+            } else
+            {
+                return true
             }
+            
             
         case .FarmerWithSheepFromThereToHere:
             print("FarmerWithSheepFromThereToHere")
             
-            if thereArr.contains(sheep)
-            {
-                thereArr.remove(sheep)
-                hereArr.add(sheep)
-                
-                sheep.sitStatus = .HERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
-                return false
-            }
+            return true
             
         case .FarmerWithVegetableFromThereToHere:
             print("FarmerWithVegetableFromThereToHere")
             
-            if thereArr.contains(vegetable)
+            if thereArr.contains(sheep)
+                && thereArr.contains(vegetable)
             {
-                thereArr.remove(vegetable)
-                hereArr.add(vegetable)
-                
-                vegetable.sitStatus = .HERE
-                
-                return isValid(hereArr: hereArr, thereArr: thereArr)
-            } else {
                 return false
+            }
+            else
+            {
+                return true
             }
         }
         
     }
     
-    private func isValid(hereArr:NSArray, thereArr:NSArray) -> Bool
+    private func operation(process: ProcessHereToThere)
     {
-        print("isValid")
+        print("operation ProcessHereToThere")
         
-        if (hereArr.contains(wolf)
-            && hereArr.contains(sheep))
-        {
-            return false;
+        
+        switch process {
+        case .FarmerFromHereToThere:
+            farmer.sitStatus = .THERE
+            
+        case .FarmerWithWolfFromHereToThere:
+            wolf.sitStatus = .THERE
+            farmer.sitStatus = .THERE
+            
+        case .FarmerWithSheepFromHereToThere:
+            sheep.sitStatus = .THERE
+            farmer.sitStatus = .THERE
+            
+        case .FarmerWithVegetableFromHereToThere:
+            vegetable.sitStatus = .THERE
+            farmer.sitStatus = .THERE
         }
+    }
+    
+    private func operation(process: ProcessTHereToHere)
+    {
+        print("operation ProcessTHereToHere")
         
-        if (hereArr.contains(sheep)
-            && hereArr.contains(vegetable))
-        {
-            return false;
+        switch process {
+        case .FarmerFromThereToHere:
+            farmer.sitStatus = .HERE
+            
+        case .FarmerWithWolfFromThereToHere:
+            wolf.sitStatus = .HERE
+            farmer.sitStatus = .HERE
+            
+        case .FarmerWithSheepFromThereToHere:
+            sheep.sitStatus = .HERE
+            farmer.sitStatus = .HERE
+            
+        case .FarmerWithVegetableFromThereToHere:
+            vegetable.sitStatus = .HERE
+            farmer.sitStatus = .HERE
         }
-        
-        if (thereArr.contains(wolf)
-            && thereArr.contains(sheep))
-        {
-            return false;
-        }
-        
-        if (thereArr.contains(sheep)
-            && thereArr.contains(vegetable))
-        {
-            return false;
-        }
-        
-        return true;
     }
     
     private func printResult(index: Int)
