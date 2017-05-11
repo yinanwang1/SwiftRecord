@@ -43,7 +43,6 @@ class WolfViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBOutlet weak var startBtn: UIButton!
@@ -51,8 +50,6 @@ class WolfViewController: UIViewController {
     @IBAction func onClickStartBtn(_ sender: Any)
     {
         start(sort: 0);
-        
-        startBtn.isEnabled = false
     }
     
     
@@ -60,10 +57,7 @@ class WolfViewController: UIViewController {
     {
         var index = sort
         
-        
         print("start index is \(index)")
-        
-        printResult(index: index);
         
         if isFinished() {
             printResult(index: index);
@@ -83,7 +77,7 @@ class WolfViewController: UIViewController {
                 
                 if isValid(process: process)
                 {
-                    let arr:NSMutableArray? = fetchArr(index: index)
+                    let arr:NSMutableArray? = fetchArr(index: index, original: sort)
                     
                     if (0 < (arr?.count)!)
                     {
@@ -123,7 +117,7 @@ class WolfViewController: UIViewController {
                 
                 if isValid(process: process)
                 {
-                    let arr:NSMutableArray? = fetchArr(index: index)
+                    let arr:NSMutableArray? = fetchArr(index: index, original: sort)
                     
                     if (0 < (arr?.count)!)
                     {
@@ -154,14 +148,20 @@ class WolfViewController: UIViewController {
         }
     }
     
-    private func fetchArr(index:Int) -> NSMutableArray
+    private func fetchArr(index:Int, original:Int) -> NSMutableArray
     {
         var arr:NSMutableArray?
         
         if index >= sortArray.count {
-            arr = NSMutableArray.init();
+            if original == 0
+            {
+                arr = NSMutableArray.init();
+            } else {
+                arr = sortArray.object(at: original) as? NSMutableArray;
+            }
             
             sortArray.add(arr as Any)
+            
         } else {
             arr = sortArray.object(at: index) as? NSMutableArray;
         }
