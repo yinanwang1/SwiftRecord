@@ -43,16 +43,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adw-HU-7Ew">
+                                <rect key="frame" x="137.5" y="589" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dVd-fM-Gt2"/>
+                                    <constraint firstAttribute="width" constant="100" id="jRS-xb-eEY"/>
+                                </constraints>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="onClickStartBtn:" destination="CdV-Lc-uM8" eventType="touchUpInside" id="Ibd-aF-Wlc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="adw-HU-7Ew" firstAttribute="centerX" secondItem="HCz-G1-Lo8" secondAttribute="centerX" id="598-5A-648"/>
                             <constraint firstItem="LLO-5a-hhh" firstAttribute="leading" secondItem="HCz-G1-Lo8" secondAttribute="leading" id="EUG-Xw-ZTE"/>
                             <constraint firstItem="LLO-5a-hhh" firstAttribute="top" secondItem="BXh-9Q-6wO" secondAttribute="bottom" id="av3-iL-z8c"/>
+                            <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="adw-HU-7Ew" secondAttribute="bottom" constant="34" id="dlg-3f-uoB"/>
                             <constraint firstAttribute="trailing" secondItem="LLO-5a-hhh" secondAttribute="trailing" id="lpN-Hw-Xbt"/>
                             <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="LLO-5a-hhh" secondAttribute="bottom" id="oW6-YE-y2I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="农夫、狼、羊、白菜" id="3mD-ti-xxQ"/>
+                    <connections>
+                        <outlet property="startBtn" destination="adw-HU-7Ew" id="09s-RY-bbA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sh6-bT-8FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

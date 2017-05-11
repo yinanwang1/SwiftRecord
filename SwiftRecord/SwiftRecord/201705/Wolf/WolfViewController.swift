@@ -44,11 +44,23 @@ class WolfViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        start(index: 0);
     }
     
-    private func start(index:Int)
+    @IBOutlet weak var startBtn: UIButton!
+    
+    @IBAction func onClickStartBtn(_ sender: Any)
     {
+        start(sort: 0);
+        
+        startBtn.isEnabled = false
+    }
+    
+    
+    private func start(sort:Int)
+    {
+        var index = sort
+        
+        
         print("start index is \(index)")
         
         printResult(index: index);
@@ -59,22 +71,6 @@ class WolfViewController: UIViewController {
             return;
         }
         
-        var arr:NSMutableArray?
-        
-        if index >= sortArray.count {
-            if 0 <= index - 1
-            {
-                let arrPre:NSArray? = sortArray.object(at: index - 1) as? NSArray;
-                
-                arr = NSMutableArray.init(array: arrPre!);
-            } else {
-                arr = NSMutableArray.init();
-            }
-            
-            sortArray.add(arr as Any)
-        } else {
-           arr = sortArray.object(at: index) as? NSMutableArray;
-        }
         
         switch farmer.sitStatus {
         case .HERE:
@@ -82,16 +78,23 @@ class WolfViewController: UIViewController {
             {
                 print("hereToThereArr i is \(i)")
                 
-                let process = hereToThereArr[i]
-                let prePreocess = thereToHereArr[i]
+                let process:ProcessHereToThere = hereToThereArr[i]
+                let prePreocess:ProcessTHereToHere = thereToHereArr[i]
                 
                 if isValid(process: process)
                 {
+                    let arr:NSMutableArray? = fetchArr(index: index)
+                    
                     if (0 < (arr?.count)!)
                     {
+                        if (arr?.lastObject is ProcessHereToThere)
+                        {
+                            continue;
+                        }
+                        
                         let tempProcess = arr?.lastObject as! ProcessTHereToHere
                         
-                        if (prePreocess == tempProcess)
+                        if tempProcess == prePreocess
                         {
                             continue;
                         }
@@ -100,11 +103,11 @@ class WolfViewController: UIViewController {
                     arr?.add(process)
                     operation(process: process)
                     
-                    if 0 == i {
-                        start(index: index)
-                    } else {
-                        start(index: index + 1)
-                    }
+                    sortArray.replaceObject(at: index, with: arr as Any)
+                    
+                    start(sort: index)
+                    
+                    index += 1
                 }
             }
             
@@ -120,8 +123,14 @@ class WolfViewController: UIViewController {
                 
                 if isValid(process: process)
                 {
+                    let arr:NSMutableArray? = fetchArr(index: index)
+                    
                     if (0 < (arr?.count)!)
                     {
+                        if arr?.lastObject is ProcessTHereToHere {
+                            continue
+                        }
+                        
                         let tempProcess = arr?.lastObject as! ProcessHereToThere
                         
                         if prePreocess == tempProcess
@@ -133,11 +142,11 @@ class WolfViewController: UIViewController {
                     arr?.add(process)
                     operation(process: process)
                     
-                    if 0 == i {
-                        start(index: index)
-                    } else {
-                        start(index: index + 1)
-                    }
+                    sortArray.replaceObject(at: index, with: arr as Any)
+                    
+                    start(sort: index)
+                    
+                    index += 1
                 }
             }
             
@@ -145,6 +154,20 @@ class WolfViewController: UIViewController {
         }
     }
     
+    private func fetchArr(index:Int) -> NSMutableArray
+    {
+        var arr:NSMutableArray?
+        
+        if index >= sortArray.count {
+            arr = NSMutableArray.init();
+            
+            sortArray.add(arr as Any)
+        } else {
+            arr = sortArray.object(at: index) as? NSMutableArray;
+        }
+        
+        return arr!
+    }
     
     private func isFinished() -> Bool
     {
@@ -263,32 +286,47 @@ class WolfViewController: UIViewController {
         case .FarmerWithWolfFromHereToThere:
             print("FarmerWithWolfFromHereToThere")
             
-            if hereArr.contains(sheep)
-               && hereArr.contains(vegetable)
-            {
-                return true
-            }
-            else
-            {
+            if hereArr.contains(wolf) {
+                if hereArr.contains(sheep)
+                    && hereArr.contains(vegetable)
+                {
+                    return true
+                }
+                else
+                {
+                    return false
+                }
+            } else {
                 return false
             }
+            
             
         case .FarmerWithSheepFromHereToThere:
             print("FarmerWithSheepFromHereToThere")
             
-            return true
+            if hereArr.contains(sheep) {
+                return true
+            } else {
+                return false
+            }
             
         case .FarmerWithVegetableFromHereToThere:
             print("FarmerWithVegetableFromHereToThere")
             
-            if hereArr.contains(wolf)
-               && hereArr.contains(sheep){
+            if hereArr.contains(vegetable) {
+                if hereArr.contains(wolf)
+                    && hereArr.contains(sheep){
+                    return false
+                }
+                else
+                {
+                    return true
+                }
+            } else {
                 return false
             }
-            else
-            {
-                return true
-            }
+            
+            
         }
         
     }
@@ -309,32 +347,45 @@ class WolfViewController: UIViewController {
         case .FarmerWithWolfFromThereToHere:
             print("FarmerWithWolfFromThereToHere")
             
-            if thereArr.contains(sheep)
-                && thereArr.contains(vegetable)
+            if thereArr.contains(wolf)
             {
+                if thereArr.contains(sheep)
+                    && thereArr.contains(vegetable)
+                {
+                    return false
+                } else
+                {
+                    return true
+                }
+            } else {
                 return false
-            } else
-            {
-                return true
             }
             
             
         case .FarmerWithSheepFromThereToHere:
             print("FarmerWithSheepFromThereToHere")
             
-            return true
+            if thereArr.contains(sheep) {
+                return true
+            } else {
+                return false
+            }
             
         case .FarmerWithVegetableFromThereToHere:
             print("FarmerWithVegetableFromThereToHere")
             
-            if thereArr.contains(sheep)
-                && thereArr.contains(vegetable)
-            {
+            if thereArr.contains(vegetable) {
+                if thereArr.contains(sheep)
+                    && thereArr.contains(vegetable)
+                {
+                    return false
+                }
+                else
+                {
+                    return true
+                }
+            } else {
                 return false
-            }
-            else
-            {
-                return true
             }
         }
         
