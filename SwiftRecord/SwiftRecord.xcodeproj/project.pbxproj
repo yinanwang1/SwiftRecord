@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C62341DD1E4C4CD0006CC3FC /* Foodfill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62341DC1E4C4CD0006CC3FC /* Foodfill.storyboard */; };
-		C62341DF1E4C4CE4006CC3FC /* FoodfillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62341DE1E4C4CE4006CC3FC /* FoodfillViewController.swift */; };
+		C64B8A841EC3132B0021D89C /* Wolf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64B8A831EC3132B0021D89C /* Wolf.storyboard */; };
+		C64B8A861EC313620021D89C /* WolfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A851EC313620021D89C /* WolfViewController.swift */; };
+		C64B8A881EC315B10021D89C /* Wolf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A871EC315B10021D89C /* Wolf.swift */; };
+		C64B8A8A1EC315F60021D89C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A891EC315F60021D89C /* Base.swift */; };
+		C64B8A8C1EC316240021D89C /* Sheep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8B1EC316240021D89C /* Sheep.swift */; };
+		C64B8A8E1EC3163D0021D89C /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8D1EC3163D0021D89C /* Vegetable.swift */; };
+		C64B8A901EC31A500021D89C /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8F1EC31A500021D89C /* Farmer.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C62341DC1E4C4CD0006CC3FC /* Foodfill.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Foodfill.storyboard; sourceTree = "<group>"; };
-		C62341DE1E4C4CE4006CC3FC /* FoodfillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodfillViewController.swift; sourceTree = "<group>"; };
+		C64B8A831EC3132B0021D89C /* Wolf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wolf.storyboard; sourceTree = "<group>"; };
+		C64B8A851EC313620021D89C /* WolfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WolfViewController.swift; sourceTree = "<group>"; };
+		C64B8A871EC315B10021D89C /* Wolf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wolf.swift; sourceTree = "<group>"; };
+		C64B8A891EC315F60021D89C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		C64B8A8B1EC316240021D89C /* Sheep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheep.swift; sourceTree = "<group>"; };
+		C64B8A8D1EC3163D0021D89C /* Vegetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
+		C64B8A8F1EC31A500021D89C /* Farmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,21 +45,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C62341DA1E4C4CC0006CC3FC /* 201702 */ = {
+		C64B8A811EC3131E0021D89C /* 201705 */ = {
 			isa = PBXGroup;
 			children = (
-				C62341DB1E4C4CC0006CC3FC /* Floodfill */,
+				C64B8A821EC3131E0021D89C /* Wolf */,
 			);
-			path = 201702;
+			path = 201705;
 			sourceTree = "<group>";
 		};
-		C62341DB1E4C4CC0006CC3FC /* Floodfill */ = {
+		C64B8A821EC3131E0021D89C /* Wolf */ = {
 			isa = PBXGroup;
 			children = (
-				C62341DC1E4C4CD0006CC3FC /* Foodfill.storyboard */,
-				C62341DE1E4C4CE4006CC3FC /* FoodfillViewController.swift */,
+				C64B8A831EC3132B0021D89C /* Wolf.storyboard */,
+				C64B8A851EC313620021D89C /* WolfViewController.swift */,
+				C64B8A871EC315B10021D89C /* Wolf.swift */,
+				C64B8A891EC315F60021D89C /* Base.swift */,
+				C64B8A8B1EC316240021D89C /* Sheep.swift */,
+				C64B8A8D1EC3163D0021D89C /* Vegetable.swift */,
+				C64B8A8F1EC31A500021D89C /* Farmer.swift */,
 			);
-			path = Floodfill;
+			path = Wolf;
 			sourceTree = "<group>";
 		};
 		C6C853361E128B6900E489E9 = {
@@ -71,7 +86,7 @@
 		C6C853411E128B6900E489E9 /* SwiftRecord */ = {
 			isa = PBXGroup;
 			children = (
-				C62341DA1E4C4CC0006CC3FC /* 201702 */,
+				C64B8A811EC3131E0021D89C /* 201705 */,
 				C6C853421E128B6900E489E9 /* AppDelegate.swift */,
 				C6C853491E128B6900E489E9 /* Assets.xcassets */,
 				C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */,
@@ -112,7 +127,7 @@
 				TargetAttributes = {
 					C6C8533E1E128B6900E489E9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 2L5Z45N6U9;
+						DevelopmentTeam = 2LYTD2VW3G;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -141,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */,
-				C62341DD1E4C4CD0006CC3FC /* Foodfill.storyboard in Resources */,
+				C64B8A841EC3132B0021D89C /* Wolf.storyboard in Resources */,
 				C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,7 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62341DF1E4C4CE4006CC3FC /* FoodfillViewController.swift in Sources */,
+				C64B8A881EC315B10021D89C /* Wolf.swift in Sources */,
+				C64B8A8E1EC3163D0021D89C /* Vegetable.swift in Sources */,
+				C64B8A8C1EC316240021D89C /* Sheep.swift in Sources */,
+				C64B8A901EC31A500021D89C /* Farmer.swift in Sources */,
+				C64B8A8A1EC315F60021D89C /* Base.swift in Sources */,
+				C64B8A861EC313620021D89C /* WolfViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,14 +289,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2L5Z45N6U9;
+				DEVELOPMENT_TEAM = 2LYTD2VW3G;
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huanxiao.qiji;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c7a2a6a2-0613-41a2-8333-64918d055364";
-				PROVISIONING_PROFILE_SPECIFIER = qiji_dev;
+				PROVISIONING_PROFILE = "00ac28df-ce6f-40cd-93f8-ddd4882cb185";
+				PROVISIONING_PROFILE_SPECIFIER = qeebike_dev;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -286,14 +306,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 2L5Z45N6U9;
+				DEVELOPMENT_TEAM = 2LYTD2VW3G;
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huanxiao.qiji;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e5b48512-2921-417a-b434-74c89e45f616";
-				PROVISIONING_PROFILE_SPECIFIER = qiji_release;
+				PROVISIONING_PROFILE = "6ac9fc94-4ee7-457a-864b-04f81c869b36";
+				PROVISIONING_PROFILE_SPECIFIER = qeebike_release;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

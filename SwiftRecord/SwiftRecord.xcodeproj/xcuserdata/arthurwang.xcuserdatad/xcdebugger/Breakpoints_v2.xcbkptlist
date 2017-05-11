@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SwiftRecord/ViewController.swift"
-            timestampString = "504600918.49374"
+            filePath = "SwiftRecord/201705/Wolf/WolfViewController.swift"
+            timestampString = "516172937.763963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "drawBezierPath()"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "printResult(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

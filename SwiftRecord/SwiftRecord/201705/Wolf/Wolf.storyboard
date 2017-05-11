@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V8R-fl-fEp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="eU7-o8-Fzh">
+            <objects>
+                <navigationController id="V8R-fl-fEp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tEA-SY-Jbe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CdV-Lc-uM8" kind="relationship" relationship="rootViewController" id="yla-N5-kHe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5n-fk-jik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679" y="106"/>
+        </scene>
+        <!--农夫、狼、羊、白菜-->
+        <scene sceneID="3Av-nS-Elg">
+            <objects>
+                <viewController id="CdV-Lc-uM8" customClass="WolfViewController" customModule="SwiftRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BXh-9Q-6wO"/>
+                        <viewControllerLayoutGuide type="bottom" id="M7m-Ee-lgH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HCz-G1-Lo8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="一个农夫在河边，需要把狼、羊、菜和自己运到河对岸去，只有农夫能够划船，而且船比较小，除农夫之外每次只能运一种东西，还有一个棘手问题，就是如果没有农夫看着，羊会偷吃菜，狼会吃羊。请考虑一种方法，让农夫能够安全地安排这些东西和他自己过河。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LLO-5a-hhh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LLO-5a-hhh" firstAttribute="leading" secondItem="HCz-G1-Lo8" secondAttribute="leading" id="EUG-Xw-ZTE"/>
+                            <constraint firstItem="LLO-5a-hhh" firstAttribute="top" secondItem="BXh-9Q-6wO" secondAttribute="bottom" id="av3-iL-z8c"/>
+                            <constraint firstAttribute="trailing" secondItem="LLO-5a-hhh" secondAttribute="trailing" id="lpN-Hw-Xbt"/>
+                            <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="LLO-5a-hhh" secondAttribute="bottom" id="oW6-YE-y2I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="农夫、狼、羊、白菜" id="3mD-ti-xxQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sh6-bT-8FY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="105.69715142428787"/>
+        </scene>
+    </scenes>
+</document>
