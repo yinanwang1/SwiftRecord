@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftRecord/201705/Wolf/WolfViewController.swift"
-            timestampString = "516267620.756491"
+            timestampString = "516268888.743136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "isValid(process:item:)"
             landmarkType = "7">
          </BreakpointContent>

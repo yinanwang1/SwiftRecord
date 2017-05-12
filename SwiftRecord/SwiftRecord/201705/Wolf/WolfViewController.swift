@@ -356,6 +356,18 @@ class WolfViewController: UIViewController {
         case .FarmerFromHereToThere:
             
             if farmer.sitStatus == .HERE {
+                if sheep.sitStatus == .HERE
+                    && vegetable.sitStatus == .HERE
+                {
+                    return false
+                }
+                
+                if wolf.sitStatus == .HERE
+                    && sheep.sitStatus == .HERE
+                {
+                    return false
+                }
+                
                 return true
             } else {
                 return false
@@ -416,6 +428,18 @@ class WolfViewController: UIViewController {
         switch process {
         case .FarmerFromThereToHere:
             if farmer.sitStatus == .THERE {
+                if sheep.sitStatus == .HERE
+                    && vegetable.sitStatus == .HERE
+                {
+                    return false
+                }
+                
+                if wolf.sitStatus == .HERE
+                    && sheep.sitStatus == .HERE
+                {
+                    return false
+                }
+                
                 return true
             } else {
                 return false
