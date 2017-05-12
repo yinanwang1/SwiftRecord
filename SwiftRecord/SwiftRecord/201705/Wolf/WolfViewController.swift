@@ -61,8 +61,6 @@ class WolfViewController: UIViewController {
     {
         var index = sort
         
-//        printResult(index: index)
-        
         if isFinished(index:index) {
             printResult(index: index);
             
@@ -428,14 +426,14 @@ class WolfViewController: UIViewController {
         switch process {
         case .FarmerFromThereToHere:
             if farmer.sitStatus == .THERE {
-                if sheep.sitStatus == .HERE
-                    && vegetable.sitStatus == .HERE
+                if sheep.sitStatus == .THERE
+                    && vegetable.sitStatus == .THERE
                 {
                     return false
                 }
                 
-                if wolf.sitStatus == .HERE
-                    && sheep.sitStatus == .HERE
+                if wolf.sitStatus == .THERE
+                    && sheep.sitStatus == .THERE
                 {
                     return false
                 }
