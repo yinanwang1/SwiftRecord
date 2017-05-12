@@ -77,6 +77,8 @@ class WolfViewController: UIViewController {
                 
                 if isValid(process: process)
                 {
+                   print("\(process) is valid");
+                    
                     let arr:NSMutableArray? = fetchArr(index: index, original: sort)
                     
                     if (0 < (arr?.count)!)
@@ -103,6 +105,10 @@ class WolfViewController: UIViewController {
                     
                     index += 1
                 }
+                else
+                {
+                    print("\(process) is valid");
+                }
             }
             
             break
@@ -117,6 +123,8 @@ class WolfViewController: UIViewController {
                 
                 if isValid(process: process)
                 {
+                    print("\(process) is valid");
+                    
                     let arr:NSMutableArray? = fetchArr(index: index, original: sort)
                     
                     if (0 < (arr?.count)!)
@@ -141,6 +149,10 @@ class WolfViewController: UIViewController {
                     start(sort: index)
                     
                     index += 1
+                }
+                else
+                {
+                    print("\(process) is invalid");
                 }
             }
             

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftRecord/201705/Wolf/WolfViewController.swift"
-            timestampString = "516196941.618877"
+            timestampString = "516248310.957872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "start(sort:)"
             landmarkType = "7">
          </BreakpointContent>
