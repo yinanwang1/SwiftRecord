@@ -10,25 +10,29 @@ import UIKit
 
 class WolfViewController: UIViewController {
     
-    enum ProcessHereToThere {
-        case FarmerFromHereToThere
+    let VISIT_PATH:NSString      = "visit_path"
+    let RECORD_STATUS:NSString   = "record_status"
+    
+    enum ProcessHereToThere: Int {
+        case FarmerFromHereToThere = 0
         case FarmerWithWolfFromHereToThere
         case FarmerWithSheepFromHereToThere
         case FarmerWithVegetableFromHereToThere
     }
     
-    enum ProcessTHereToHere {
-        case FarmerFromThereToHere
+    enum ProcessTHereToHere: Int {
+        case FarmerFromThereToHere = 0
         case FarmerWithWolfFromThereToHere
         case FarmerWithSheepFromThereToHere
         case FarmerWithVegetableFromThereToHere
     }
     
-    
-    private var farmer:Farmer = Farmer();
-    private var wolf:Wolf = Wolf();
-    private var sheep:Sheep = Sheep();
-    private var vegetable:Vegetable = Vegetable();
+    enum SortWhole: Int {
+        case FarmerSort = 0
+        case WolfSort
+        case SheepSort
+        case VegetableSort
+    }
     
     private var sortArray:NSMutableArray = NSMutableArray.init(capacity: 5);
     private var hereToThereArr = [ProcessHereToThere.FarmerFromHereToThere,
@@ -59,11 +63,13 @@ class WolfViewController: UIViewController {
         
         print("start index is \(index)")
         
-        if isFinished() {
+        if isFinished(index:index) {
             printResult(index: index);
             
             return;
         }
+        
+        let farmer:Farmer = fetchFarmer(index: index)
         
         
         switch farmer.sitStatus {
@@ -75,13 +81,15 @@ class WolfViewController: UIViewController {
                 let process:ProcessHereToThere = hereToThereArr[i]
                 let prePreocess:ProcessTHereToHere = thereToHereArr[i]
                 
-                if isValid(process: process)
+                if isValid(process: process, index: index)
                 {
                    print("\(process) is valid");
                     
-                    let arr:NSMutableArray? = fetchArr(index: index, original: sort)
+                    let dic:NSDictionary? = fetchArr(index: index, original: sort)
+                    let arr:NSMutableArray? = dic?.object(forKey: VISIT_PATH) as? NSMutableArray
                     
-                    if (0 < (arr?.count)!)
+                    if (arr != nil
+                        && 0 < (arr?.count)!)
                     {
                         if (arr?.lastObject is ProcessHereToThere)
                         {
@@ -97,9 +105,10 @@ class WolfViewController: UIViewController {
                     }
                     
                     arr?.add(process)
-                    operation(process: process)
+                    operation(process: process, index:index)
                     
-                    sortArray.replaceObject(at: index, with: arr as Any)
+                    dic?.setValue(arr, forKey: VISIT_PATH as String)
+                    sortArray.replaceObject(at: index, with: dic as Any)
                     
                     start(sort: index)
                     
@@ -107,7 +116,7 @@ class WolfViewController: UIViewController {
                 }
                 else
                 {
-                    print("\(process) is valid");
+                    print("\(process) is invalid");
                 }
             }
             
@@ -121,13 +130,15 @@ class WolfViewController: UIViewController {
                 let process = thereToHereArr[i]
                 let prePreocess = hereToThereArr[i]
                 
-                if isValid(process: process)
+                if isValid(process: process, index:index)
                 {
                     print("\(process) is valid");
                     
-                    let arr:NSMutableArray? = fetchArr(index: index, original: sort)
+                    let dic:NSMutableDictionary? = fetchArr(index: index, original: sort)
+                    let arr:NSMutableArray? = dic?.object(forKey: VISIT_PATH) as? NSMutableArray
                     
-                    if (0 < (arr?.count)!)
+                    if (arr != nil
+                        && 0 < (arr?.count)!)
                     {
                         if arr?.lastObject is ProcessTHereToHere {
                             continue
@@ -137,14 +148,14 @@ class WolfViewController: UIViewController {
                         
                         if prePreocess == tempProcess
                         {
-                            continue
-                        }
+                            continue                        }
                     }
                     
                     arr?.add(process)
-                    operation(process: process)
+                    operation(process: process, index: index)
                     
-                    sortArray.replaceObject(at: index, with: arr as Any)
+                    dic?.setValue(arr, forKey: VISIT_PATH as String)
+                    sortArray.replaceObject(at: index, with: dic as Any)
                     
                     start(sort: index)
                     
@@ -160,30 +171,74 @@ class WolfViewController: UIViewController {
         }
     }
     
-    private func fetchArr(index:Int, original:Int) -> NSMutableArray
+    private func fetchFarmer(index:Int) -> Farmer
     {
-        var arr:NSMutableArray?
+        var recordStatusArr:NSArray
+        
+        if index >= sortArray.count {
+            recordStatusArr = initialRecordStatus()
+            let item:NSDictionary = NSDictionary.init(objects: [NSArray.init(), recordStatusArr],
+                                                      forKeys: [VISIT_PATH, RECORD_STATUS])
+            
+            sortArray.add(item)
+        } else {
+            let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+            
+            recordStatusArr = item.object(forKey: RECORD_STATUS) as! NSArray
+        }
+        
+        return recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+    }
+    
+    private func initialRecordStatus() -> NSArray
+    {
+        let farmer:Farmer = Farmer();
+        let wolf:Wolf = Wolf();
+        let sheep:Sheep = Sheep();
+        let vegetable:Vegetable = Vegetable();
+        
+        let statusArr = NSArray.init(objects: farmer, wolf, sheep, vegetable)
+        
+        return statusArr
+    }
+    
+    private func fetchArr(index:Int, original:Int) -> NSMutableDictionary
+    {
+        var dic:NSMutableDictionary?
         
         if index >= sortArray.count {
             if original == 0
             {
-                arr = NSMutableArray.init();
+                dic = NSMutableDictionary.init();
             } else {
-                arr = sortArray.object(at: original) as? NSMutableArray;
+                dic = NSMutableDictionary.init(dictionary: (sortArray.object(at: original) as? NSDictionary)!) ;
             }
             
-            sortArray.add(arr as Any)
+            sortArray.add(dic as Any)
             
         } else {
-            arr = sortArray.object(at: index) as? NSMutableArray;
+            dic = NSMutableDictionary.init(dictionary: (sortArray.object(at: index) as? NSDictionary)!) ;
         }
         
-        return arr!
+        return dic!
     }
     
-    private func isFinished() -> Bool
+    private func isFinished(index:Int) -> Bool
     {
         print("isFinished")
+        
+        if index >= sortArray.count {
+            return false
+        }
+        
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let farmer:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
         
         if farmer.sitStatus == .HERE {
             return false
@@ -204,9 +259,18 @@ class WolfViewController: UIViewController {
         return true
     }
     
-    private func stayHERE() -> NSMutableArray
+    private func stayHERE(index: Int) -> NSMutableArray
     {
         print("stayHERE")
+        
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let farmer:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
         
         let hereArr = NSMutableArray.init(capacity: 5);
         
@@ -243,9 +307,18 @@ class WolfViewController: UIViewController {
         return hereArr;
     }
     
-    private func stayTHERE() -> NSMutableArray
+    private func stayTHERE(index: Int) -> NSMutableArray
     {
         print("stayTHERE")
+        
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let farmer:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
         
         let thereArr = NSMutableArray.init(capacity: 5);
         
@@ -282,11 +355,20 @@ class WolfViewController: UIViewController {
     }
     
     
-    private func isValid(process:ProcessHereToThere) -> Bool
+    private func isValid(process:ProcessHereToThere, index: Int) -> Bool
     {
         print("isValid ProcessHereToThere")
         
-        let hereArr:NSMutableArray = NSMutableArray.init(array: stayHERE());
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let _:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
+        
+        let hereArr:NSMutableArray = NSMutableArray.init(array: stayHERE(index: index));
         
         switch process {
         case .FarmerFromHereToThere:
@@ -343,11 +425,20 @@ class WolfViewController: UIViewController {
         
     }
     
-    private func isValid(process:ProcessTHereToHere) -> Bool
+    private func isValid(process:ProcessTHereToHere, index:Int) -> Bool
     {
         print("isValid ProcessTHereToHere")
+        
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let _:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
 
-        let thereArr:NSMutableArray = NSMutableArray.init(array: stayTHERE());
+        let thereArr:NSMutableArray = NSMutableArray.init(array: stayTHERE(index:index));
         
         switch process {
         case .FarmerFromThereToHere:
@@ -403,10 +494,18 @@ class WolfViewController: UIViewController {
         
     }
     
-    private func operation(process: ProcessHereToThere)
+    private func operation(process: ProcessHereToThere, index:Int)
     {
         print("operation ProcessHereToThere")
         
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let farmer:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
         
         switch process {
         case .FarmerFromHereToThere:
@@ -426,9 +525,18 @@ class WolfViewController: UIViewController {
         }
     }
     
-    private func operation(process: ProcessTHereToHere)
+    private func operation(process: ProcessTHereToHere, index:Int)
     {
         print("operation ProcessTHereToHere")
+        
+        let item:NSDictionary = sortArray.object(at: index) as! NSDictionary
+        
+        let recordStatusArr:NSArray = item.object(forKey: RECORD_STATUS) as! NSArray
+        
+        let farmer:Farmer = recordStatusArr.object(at: SortWhole.FarmerSort.rawValue) as! Farmer
+        let wolf:Wolf = recordStatusArr.object(at: SortWhole.WolfSort.rawValue) as! Wolf
+        let sheep:Sheep = recordStatusArr.object(at: SortWhole.SheepSort.rawValue) as! Sheep
+        let vegetable:Vegetable = recordStatusArr.object(at: SortWhole.VegetableSort.rawValue) as! Vegetable
         
         switch process {
         case .FarmerFromThereToHere:
