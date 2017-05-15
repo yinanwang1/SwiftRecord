@@ -12,6 +12,9 @@ class WolfViewController: UIViewController {
     
     let VISIT_PATH:NSString      = "visit_path"
     let RECORD_STATUS:NSString   = "record_status"
+    let PRE_NUMBER:NSString      = "number_pre"
+    let PRE_VALUE:NSString       = "number_value"
+    
     
     enum ProcessHereToThere: Int {
         case FarmerFromHereToThere = 0
@@ -54,11 +57,11 @@ class WolfViewController: UIViewController {
     
     @IBAction func onClickStartBtn(_ sender: Any)
     {
-        start(sort: 0);
+        start(sort: 0, original: 0);
     }
     
     
-    private func start(sort:Int)
+    private func start(sort:Int, original:Int)
     {
         var index = sort
         
@@ -71,12 +74,23 @@ class WolfViewController: UIViewController {
         let farmer:Farmer = fetchFarmer(index: index)
         
         var preDic:NSMutableDictionary? = nil
-        if sort >= preArray.count {
-            preDic = deepCopySortArr(index: sort)
+        
+        for i in 0..<preArray.count {
+            let item:NSDictionary = preArray.object(at: i) as! NSDictionary
             
-            preArray.add(preDic as Any)
-        } else {
-            preDic = (preArray.object(at: sort) as! NSMutableDictionary)
+            let number = item.object(forKey: PRE_NUMBER)
+            if number as! Int == sort {
+                preDic = NSMutableDictionary.init(dictionary: item.object(forKey: PRE_VALUE) as! NSDictionary)
+            }
+        }
+        
+        if nil == preDic {
+            preDic = deepCopySortArr(index: original)
+            
+            let tempDic = NSDictionary.init(objects: [sort, preDic as Any],
+                                            forKeys: [PRE_NUMBER, PRE_VALUE])
+            
+            preArray.add(tempDic as Any)
         }
         
         
@@ -86,8 +100,6 @@ class WolfViewController: UIViewController {
             {
                 let process:ProcessHereToThere = hereToThereArr[i]
                 let prePreocess:ProcessTHereToHere = thereToHereArr[i]
-                
-                print("HERE i is \(i), sort is \(sort), preDic is \(String(describing: preDic))")
                 
                 if isValid(process: process, item: preDic!)
                 {
@@ -125,7 +137,7 @@ class WolfViewController: UIViewController {
                     dic?.setValue(arr, forKey: VISIT_PATH as String)
                     sortArray.replaceObject(at: index, with: dic as Any)
                     
-                    start(sort: index)
+                    start(sort: index , original: sort)
                     
                     index += 1
                 }
@@ -138,8 +150,6 @@ class WolfViewController: UIViewController {
             {
                 let process = thereToHereArr[i]
                 let prePreocess = hereToThereArr[i]
-                
-                print("THERE i is \(i), sort is \(sort), preDic is \(String(describing: preDic))")
                 
                 if isValid(process: process, item: preDic!)
                 {
@@ -177,7 +187,7 @@ class WolfViewController: UIViewController {
                     dic?.setValue(arr, forKey: VISIT_PATH as String)
                     sortArray.replaceObject(at: index, with: dic as Any)
                     
-                    start(sort: index)
+                    start(sort: index, original: sort)
                     
                     index += 1
                 }
