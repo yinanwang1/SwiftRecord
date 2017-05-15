@@ -37,8 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="一个农夫在河边，需要把狼、羊、菜和自己运到河对岸去，只有农夫能够划船，而且船比较小，除农夫之外每次只能运一种东西，还有一个棘手问题，就是如果没有农夫看着，羊会偷吃菜，狼会吃羊。请考虑一种方法，让农夫能够安全地安排这些东西和他自己过河。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LLO-5a-hhh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="一个农夫在河边，需要把狼、羊、菜和自己运到河对岸去，只有农夫能够划船，而且船比较小，除农夫之外每次只能运一种东西，还有一个棘手问题，就是如果没有农夫看着，羊会偷吃菜，狼会吃羊。请考虑一种方法，让农夫能够安全地安排这些东西和他自己过河。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LLO-5a-hhh">
+                                <rect key="frame" x="15" y="64" width="345" height="588"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -58,11 +58,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="adw-HU-7Ew" firstAttribute="centerX" secondItem="HCz-G1-Lo8" secondAttribute="centerX" id="598-5A-648"/>
-                            <constraint firstItem="LLO-5a-hhh" firstAttribute="leading" secondItem="HCz-G1-Lo8" secondAttribute="leading" id="EUG-Xw-ZTE"/>
+                            <constraint firstItem="LLO-5a-hhh" firstAttribute="leading" secondItem="HCz-G1-Lo8" secondAttribute="leading" constant="15" id="EUG-Xw-ZTE"/>
                             <constraint firstItem="LLO-5a-hhh" firstAttribute="top" secondItem="BXh-9Q-6wO" secondAttribute="bottom" id="av3-iL-z8c"/>
                             <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="adw-HU-7Ew" secondAttribute="bottom" constant="34" id="dlg-3f-uoB"/>
-                            <constraint firstAttribute="trailing" secondItem="LLO-5a-hhh" secondAttribute="trailing" id="lpN-Hw-Xbt"/>
-                            <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="LLO-5a-hhh" secondAttribute="bottom" id="oW6-YE-y2I"/>
+                            <constraint firstAttribute="trailing" secondItem="LLO-5a-hhh" secondAttribute="trailing" constant="15" id="lpN-Hw-Xbt"/>
+                            <constraint firstItem="M7m-Ee-lgH" firstAttribute="top" secondItem="LLO-5a-hhh" secondAttribute="bottom" constant="15" id="oW6-YE-y2I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="农夫、狼、羊、白菜" id="3mD-ti-xxQ"/>

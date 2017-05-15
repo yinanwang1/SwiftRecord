@@ -72,10 +72,9 @@ class WolfViewController: UIViewController {
         
         switch farmer.sitStatus {
         case .HERE:
-            let preDic:NSMutableDictionary? = fetchDic(index: sort)
-            
             for i in 0..<hereToThereArr.count
             {
+                let preDic:NSMutableDictionary? = deepCopySortArr(index: sort)
                 let process:ProcessHereToThere = hereToThereArr[i]
                 let prePreocess:ProcessTHereToHere = thereToHereArr[i]
                 
@@ -124,10 +123,9 @@ class WolfViewController: UIViewController {
             break
             
         case .THERE:
-            let preDic:NSMutableDictionary? = fetchDic(index: sort)
-            
             for i in 0..<thereToHereArr.count
             {
+                let preDic:NSMutableDictionary? = deepCopySortArr(index: sort)
                 let process = thereToHereArr[i]
                 let prePreocess = hereToThereArr[i]
                 
@@ -135,7 +133,7 @@ class WolfViewController: UIViewController {
                 {
                     let dic:NSMutableDictionary?
                     if index >= sortArray.count {
-                        dic = NSMutableDictionary.init(dictionary: preDic!)
+                        dic = deepCopyDic(dic: preDic!)
                         
                         sortArray.add(dic as Any)
                     } else {
@@ -175,6 +173,26 @@ class WolfViewController: UIViewController {
             
             break
         }
+    }
+    
+    private func deepCopySortArr(index: Int) -> NSMutableDictionary
+    {
+        let dic:NSMutableDictionary = fetchDic(index: index)
+        
+        return deepCopyDic(dic: dic)
+    }
+    
+    private func deepCopyDic(dic: NSMutableDictionary) -> NSMutableDictionary
+    {
+        let preDic:NSMutableDictionary = NSMutableDictionary.init(capacity: 2)
+        
+        let record:NSArray = NSArray.init(array: dic.object(forKey: RECORD_STATUS) as! NSArray)
+        let visit:NSArray = NSArray.init(array: dic.object(forKey: VISIT_PATH) as! NSArray)
+        
+        preDic.setValue(record, forKey: RECORD_STATUS as String)
+        preDic.setValue(visit, forKey: VISIT_PATH as String)
+        
+        return preDic
     }
     
     private func fetchFarmer(index:Int) -> Farmer
