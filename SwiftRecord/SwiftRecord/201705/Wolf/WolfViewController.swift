@@ -35,6 +35,7 @@ class WolfViewController: UIViewController {
     }
     
     private var sortArray:NSMutableArray = NSMutableArray.init(capacity: 5);
+    private var preArray:NSMutableArray = NSMutableArray.init(capacity: 5);
     private var hereToThereArr = [ProcessHereToThere.FarmerFromHereToThere,
                                   ProcessHereToThere.FarmerWithWolfFromHereToThere,
                                   ProcessHereToThere.FarmerWithSheepFromHereToThere,
@@ -69,14 +70,24 @@ class WolfViewController: UIViewController {
         
         let farmer:Farmer = fetchFarmer(index: index)
         
+        var preDic:NSMutableDictionary? = nil
+        if sort >= preArray.count {
+            preDic = deepCopySortArr(index: sort)
+            
+            preArray.add(preDic as Any)
+        } else {
+            preDic = (preArray.object(at: sort) as! NSMutableDictionary)
+        }
+        
         
         switch farmer.sitStatus {
         case .HERE:
             for i in 0..<hereToThereArr.count
             {
-                let preDic:NSMutableDictionary? = deepCopySortArr(index: sort)
                 let process:ProcessHereToThere = hereToThereArr[i]
                 let prePreocess:ProcessTHereToHere = thereToHereArr[i]
+                
+                print("HERE i is \(i), sort is \(sort), preDic is \(String(describing: preDic))")
                 
                 if isValid(process: process, item: preDic!)
                 {
@@ -125,9 +136,10 @@ class WolfViewController: UIViewController {
         case .THERE:
             for i in 0..<thereToHereArr.count
             {
-                let preDic:NSMutableDictionary? = deepCopySortArr(index: sort)
                 let process = thereToHereArr[i]
                 let prePreocess = hereToThereArr[i]
+                
+                print("THERE i is \(i), sort is \(sort), preDic is \(String(describing: preDic))")
                 
                 if isValid(process: process, item: preDic!)
                 {
