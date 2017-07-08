@@ -14,9 +14,13 @@
 		C64B8A8C1EC316240021D89C /* Sheep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8B1EC316240021D89C /* Sheep.swift */; };
 		C64B8A8E1EC3163D0021D89C /* Vegetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8D1EC3163D0021D89C /* Vegetable.swift */; };
 		C64B8A901EC31A500021D89C /* Farmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B8A8F1EC31A500021D89C /* Farmer.swift */; };
+		C69863171F10852C00F25783 /* TextMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69863161F10852C00F25783 /* TextMenu.storyboard */; };
+		C69863191F1087BA00F25783 /* TextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69863181F1087BA00F25783 /* TextMenuViewController.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
+		C6D0A59A1F06332800391651 /* MethodOfExhuastionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D0A5991F06332800391651 /* MethodOfExhuastionViewController.swift */; };
+		C6D0A59C1F06334100391651 /* MethodOfExhuastion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D0A59B1F06334100391651 /* MethodOfExhuastion.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +31,15 @@
 		C64B8A8B1EC316240021D89C /* Sheep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheep.swift; sourceTree = "<group>"; };
 		C64B8A8D1EC3163D0021D89C /* Vegetable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vegetable.swift; sourceTree = "<group>"; };
 		C64B8A8F1EC31A500021D89C /* Farmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farmer.swift; sourceTree = "<group>"; };
+		C69863161F10852C00F25783 /* TextMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TextMenu.storyboard; sourceTree = "<group>"; };
+		C69863181F1087BA00F25783 /* TextMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMenuViewController.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6C8534C1E128B6900E489E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6C8534E1E128B6900E489E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D0A5991F06332800391651 /* MethodOfExhuastionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodOfExhuastionViewController.swift; sourceTree = "<group>"; };
+		C6D0A59B1F06334100391651 /* MethodOfExhuastion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MethodOfExhuastion.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,15 @@
 			path = Wolf;
 			sourceTree = "<group>";
 		};
+		C69863151F10850B00F25783 /* 201707 */ = {
+			isa = PBXGroup;
+			children = (
+				C69863161F10852C00F25783 /* TextMenu.storyboard */,
+				C69863181F1087BA00F25783 /* TextMenuViewController.swift */,
+			);
+			path = 201707;
+			sourceTree = "<group>";
+		};
 		C6C853361E128B6900E489E9 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +103,8 @@
 		C6C853411E128B6900E489E9 /* SwiftRecord */ = {
 			isa = PBXGroup;
 			children = (
+				C69863151F10850B00F25783 /* 201707 */,
+				C6D0A5981F06324100391651 /* 201706 */,
 				C64B8A811EC3131E0021D89C /* 201705 */,
 				C6C853421E128B6900E489E9 /* AppDelegate.swift */,
 				C6C853491E128B6900E489E9 /* Assets.xcassets */,
@@ -93,6 +112,15 @@
 				C6C8534E1E128B6900E489E9 /* Info.plist */,
 			);
 			path = SwiftRecord;
+			sourceTree = "<group>";
+		};
+		C6D0A5981F06324100391651 /* 201706 */ = {
+			isa = PBXGroup;
+			children = (
+				C6D0A5991F06332800391651 /* MethodOfExhuastionViewController.swift */,
+				C6D0A59B1F06334100391651 /* MethodOfExhuastion.storyboard */,
+			);
+			path = 201706;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +185,8 @@
 			files = (
 				C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */,
 				C64B8A841EC3132B0021D89C /* Wolf.storyboard in Resources */,
+				C6D0A59C1F06334100391651 /* MethodOfExhuastion.storyboard in Resources */,
+				C69863171F10852C00F25783 /* TextMenu.storyboard in Resources */,
 				C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +204,8 @@
 				C64B8A901EC31A500021D89C /* Farmer.swift in Sources */,
 				C64B8A8A1EC315F60021D89C /* Base.swift in Sources */,
 				C64B8A861EC313620021D89C /* WolfViewController.swift in Sources */,
+				C69863191F1087BA00F25783 /* TextMenuViewController.swift in Sources */,
+				C6D0A59A1F06332800391651 /* MethodOfExhuastionViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
