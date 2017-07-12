@@ -58,9 +58,18 @@
                                     <outlet property="delegate" destination="1FW-4A-T42" id="mAf-e7-5Vn"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lW-e1-GbD">
+                                <rect key="frame" x="141" y="491" width="92" height="30"/>
+                                <state key="normal" title="我要改变世界"/>
+                                <connections>
+                                    <action selector="onClickChangingBtn:" destination="1FW-4A-T42" eventType="touchUpInside" id="nIi-7d-xnG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9lW-e1-GbD" firstAttribute="top" secondItem="BSc-AR-6W4" secondAttribute="bottom" constant="54" id="0ED-89-l2t"/>
+                            <constraint firstItem="9lW-e1-GbD" firstAttribute="centerX" secondItem="WT2-WK-3oO" secondAttribute="centerX" id="Dqg-F9-KyS"/>
                             <constraint firstItem="BSc-AR-6W4" firstAttribute="centerX" secondItem="FI8-5W-Yvh" secondAttribute="centerX" id="FQh-QN-9fj"/>
                             <constraint firstItem="FI8-5W-Yvh" firstAttribute="top" secondItem="WT2-WK-3oO" secondAttribute="top" constant="8" id="Hxe-Kr-5X7"/>
                             <constraint firstAttribute="trailing" secondItem="FI8-5W-Yvh" secondAttribute="trailing" id="amQ-bj-NU3"/>
