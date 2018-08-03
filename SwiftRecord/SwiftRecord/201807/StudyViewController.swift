@@ -32,26 +32,71 @@ class StudyViewController: UIViewController {
         }
     }
 
+    enum Rank: Int {
+        case Ace = 1
+        case Two, Three, Four, Five
+        case Jack, Queen, King
+    }
+
+    struct Card {
+        var rank:Rank
+    }
+
     // MARK: - 你好啊
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        test1();
+        initialNavigationBar();
 
-        test2();
+//        test1();
+//
+//        test2();
+//
+//        let value = getList(arr: [12,123,123,123,123, 1 ,0], pre: {(s:Int) in return s > 2});
+//        print("getList is \(value))")
+//
+//        getTestEnum();
+//
+//        testBarcode()
+//
+//        testEqual();
+        
+//        Man.testGuard()
 
-        let value = getList(arr: [12,123,123,123,123, 1 ,0], pre: {(s:Int) in return s > 2});
-        print("getList is \(value))")
+//        var someInt = 3
+//        var anotherInt = 107
+//
+//        Man.swapTwoInts(a: &someInt, b: &anotherInt);
+//
+//        print("someInt is \(someInt), anotherInt is \(anotherInt)");
 
-        getTestEnum();
+//        Man.testPrint()
 
-        testBarcode()
+//        testLable();
+
+//        testOPeration()
+//
+//        testDelay()
+
+//        testTunple()
+
+//        testLabel()
+
+//        testDic()
+
+        testDidSet();
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func initialNavigationBar() {
+        let rightBarBtn:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action:#selector(StudyViewController.testDelay))
+
+        self.navigationItem.rightBarButtonItem = rightBarBtn;
     }
 
     func test1() -> Void {
@@ -142,6 +187,134 @@ class StudyViewController: UIViewController {
         case lineFeed = "\n"
         case carriageReturn = "\r"
     }
+
+
+    private func testEqual() {
+        let man:Man = Man();
+        var man2:Man = Man();
+
+//        man.value = 5
+//        man2.value = 6
+
+        man2 = man
+
+        if man2 === man {
+            print("testEqual equal")
+        } else {
+            print("testEqual don't equal")
+        }
+
+        let maxFloat:CGFloat = CGFloat(MAXFLOAT)
+
+        print("maxFloat is \(maxFloat)")
+
+        Man.canSendAttachments();
+
+        man2.printMan()
+
+    }
+
+
+    func testLable() {
+        let label:UILabel = UILabel(frame: CGRect.init(x: 50, y: 50, width: 100, height: 100))
+        label.backgroundColor = UIColor.green
+        label.textAlignment = .center
+        label.text = "wang"
+
+        self.view.addSubview(label)
+    }
+
+
+    func testOPeration() -> Void {
+        let nickName:String? = nil
+        let fullName: String = "Arthur Wang"
+        let informalGreeting = "Hi\(nickName ?? fullName)"
+
+        print(informalGreeting)
+    }
+
+    @objc func testDelay() {
+        delay(1.0) {
+            UIScreen.main.brightness = 1.0
+        }
+    }
+
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        UIScreen.main.brightness = 0.5
+
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+    }
+
+    func testTunple() {
+        let http404Error = (404, "Not Found")
+        let (_, _) = http404Error
+
+        print(http404Error.0)
+
+        let http200Error = (statusCode:200, statusMessage:"OK")
+        print(http200Error.statusCode)
+    }
+
+    func testLabel() -> Void {
+        let score = [96, 83, 43, 101, 66, 70, -5, 99];
+        First: for s in score {
+            switch s/10
+            {
+            case 10:
+                continue First
+
+            case 9:
+                print("\(s) 分为优秀")
+
+            case 8:
+                print("\(s) 分为良好")
+
+            case 7:
+                print("\(s) 分为中等")
+
+            case 0:
+                break First
+
+            default:
+                print("\(s) 分没有几个")
+            }
+        }
+    }
+
+    func testDic() -> Void {
+//        var ages = ["Peter": 23, "Wei": 35, "Anish": 65, "Katya": 19]
+//        var copiedAges = ages
+//        copiedAges["Peter"] = 24
+//        print(ages["Peter"] ?? 0)
+
+//        var a = [1, 2, 3]
+//        var b = a
+//        var c = a
+//
+//        a[0] = 42
+//        print(a[0])
+//        print(b[0])
+//        print(c[0])
+
+        let sparklingHeart = "\u{1F496} 🐮 🦋"
+        print(sparklingHeart)
+    }
+
+    func testDidSet() -> Void {
+        let man = Man();
+
+        man.manD = 5;
+
+        man.manD = 6;
+
+        man.manD = 7;
+
+        man.manD = 8;
+
+    }
+
+
 
     /*
         /*

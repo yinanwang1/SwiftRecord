@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6283F942109E2AB00159F90 /* Man.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6283F932109E2AB00159F90 /* Man.swift */; };
 		C666D5722105FD460003849D /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C666D5712105FD460003849D /* StudyViewController.swift */; };
 		C666D5742105FD530003849D /* Study.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C666D5732105FD530003849D /* Study.storyboard */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6283F932109E2AB00159F90 /* Man.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Man.swift; sourceTree = "<group>"; };
 		C666D5712105FD460003849D /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		C666D5732105FD530003849D /* Study.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Study.storyboard; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				C666D5712105FD460003849D /* StudyViewController.swift */,
+				C6283F932109E2AB00159F90 /* Man.swift */,
 				C666D5732105FD530003849D /* Study.storyboard */,
 			);
 			path = 201807;
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C666D5722105FD460003849D /* StudyViewController.swift in Sources */,
+				C6283F942109E2AB00159F90 /* Man.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
