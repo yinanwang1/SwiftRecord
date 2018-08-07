@@ -81,6 +81,17 @@ class Man: NSObject {
 }
 
 
+extension Int: ExampleProtocol {
+    var simpleDescription: String {
+        return "the number is \(self)"
+    }
+
+    mutating func adjust() {
+        self += 42
+    }
+}
+
+
 
 
 

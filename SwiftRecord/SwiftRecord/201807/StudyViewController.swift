@@ -32,15 +32,15 @@ class StudyViewController: UIViewController {
         }
     }
 
-    enum Rank: Int {
-        case Ace = 1
-        case Two, Three, Four, Five
-        case Jack, Queen, King
-    }
-
-    struct Card {
-        var rank:Rank
-    }
+//    enum Rank: Int {
+//        case Ace = 1
+//        case Two, Three, Four, Five
+//        case Jack, Queen, King
+//    }
+//
+//    struct Card {
+//        var rank:Rank
+//    }
 
     // MARK: - 你好啊
 
@@ -85,7 +85,33 @@ class StudyViewController: UIViewController {
 
 //        testDic()
 
-        testDidSet();
+//        testDidSet();
+
+//        testIfLet();
+
+//        testMultiLines()
+
+//        testBlock();
+
+//        loadData { (result) in
+//            print("获取json信息\(result)")
+//        }
+
+//        testRank();
+
+//        testEnum();
+
+//        testSimpleClass()
+
+//        testError()
+
+//       let result = makeArray(repeating: "knock", numberOfTimes: 5)
+//        print("result is \(result)")
+
+//        testWrapped()
+
+        let  simpleClass:SimpleClass = SimpleClass()
+        simpleClass.testTest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -312,6 +338,196 @@ class StudyViewController: UIViewController {
 
         man.manD = 8;
 
+    }
+
+    func testIfLet() -> Void {
+        let name:String? = "老王"
+        let age:Int? = 10
+
+        if name != nil && age != nil {
+            print(name! + String(age!))
+        }
+
+        if let nameNew = name, let ageNew = age {
+            print(nameNew + String(ageNew))
+        }
+    }
+
+    func testMultiLines() -> Void {
+        let apples = 3;
+        let oranges = 5;
+
+        let quotation = """
+            I said "I have \(apples) apples"
+            And then I said "I have \(apples + oranges) pieces of fruit."
+
+            // 这么厉害啊！！！
+            """
+
+        print("quotation is \(quotation)")
+    }
+
+
+    func testBlock() -> Void {
+        let countNum = {(num1:Int, num2:Int) -> Int in
+            return num1 + num2;
+        };
+
+        let count1 = countNum(2, 3);
+
+        print(count1)
+    }
+
+
+    func loadData(completion: @escaping (_ result: [String]) -> ()) -> Void {
+        DispatchQueue.global().async {
+            print("耗时操作\(Thread.current)")
+        }
+
+        Thread.sleep(forTimeInterval: 1.0)
+        let json = ["12", "34", "56"]
+
+        DispatchQueue.main.async {
+            print("主线程\(Thread.current)")
+
+            completion(json)
+        }
+
+    }
+
+
+    enum Rank: Int {
+        case ace = 1
+        case two, three, four, five, six, seven, eight, nine, ten
+        case jack, queen, king
+        func simpleDescription() -> String {
+            switch self {
+            case .ace:
+                return "ace"
+            case .jack:
+                return "jack"
+            case .queen:
+                return "queen"
+            case .king:
+                return "king"
+            case .ten:
+                return "真的是这样的吗"
+            default:
+                return String(self.rawValue)
+            }
+        }
+    }
+
+    func testRank() -> Void {
+        let ace = Rank.ten
+        let aceRawValue = ace.rawValue
+
+        print("ace is \(ace.simpleDescription()), aceRawValue is \(aceRawValue)")
+    }
+
+    enum ServerResponse {
+        case result(String, String)
+        case failure(String)
+    }
+
+    func testEnum() -> Void {
+        let success = ServerResponse.result("6:00 am", "8:09 pm")
+        let failure = ServerResponse.failure("Out of cheese.")
+
+        switch success {
+        case let .result(sunrise, sunset):
+            print("Sunrise is at \(sunrise) and sunset is at \(sunset)")
+        case let .failure(message):
+            print("Failure...  \(message)")
+        }
+
+        switch failure {
+        case let .result(sunrise, sunset):
+            print("Sunrise is at \(sunrise) and sunset is at \(sunset)")
+        case let .failure(message):
+            print("Failure...  \(message)")
+        }
+    }
+
+
+    func testSimpleClass() -> Void {
+        let a = SimpleClass()
+        a.adjust()
+
+        let aDescription = a.simpleDescription
+        print("aDescription " + aDescription)
+
+        print(a.anotherProperty)
+
+
+        var b = SimpleStructure();
+        b.adjust()
+        let bDescription = b.simpleDescription
+        print("bDescription " + bDescription)
+
+        print(7.simpleDescription)
+        var number = 7
+        number.adjust()
+        print(number.simpleDescription)
+
+
+        let protocolValue = a
+
+        print(protocolValue.simpleDescription)
+        print(protocolValue.anotherProperty)
+
+    }
+
+
+    enum PrinterError: Error {
+        case outOfPaper
+        case noToner
+        case onFire
+    }
+
+    func testError() -> Void {
+        do {
+            let printerResponse = try send(job: 1040, toPrinter: "Never Has Toner")
+            print(printerResponse)
+        } catch PrinterError.onFire {
+            print("I'll just put this over here, with the rest of the fire.")
+        } catch PrinterError.noToner {
+            print("我就是我，不一样的烟火")
+        } catch let printerError as PrinterError {
+            print("Printer error: \(printerError)")
+        } catch {
+            print(error)
+        }
+    }
+
+    func send(job: Int, toPrinter printerName: String) throws -> String {
+        if printerName == "Never Has Toner" {
+            throw PrinterError.noToner
+        }
+
+        return "Job sent"
+    }
+
+    func makeArray<Item>(repeating item:Item, numberOfTimes: Int) -> [Item] {
+        var result = [Item]()
+
+        for _ in 0..<numberOfTimes {
+            result.append(item)
+        }
+
+        return result
+    }
+
+    enum OptionalValue<Wrapped> {
+        case none
+        case some(Wrapped)
+    }
+
+    func testWrapped() -> Void {
+        var possibleInteger: OptionalValue<Int> = .none
+        print("possibleInteger is \(possibleInteger)")
+        possibleInteger = .some(100)
+        print("possibleInteger is \(possibleInteger)")
     }
 
 
