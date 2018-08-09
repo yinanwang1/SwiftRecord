@@ -24,35 +24,39 @@ class SimpleClass: ExampleProtocol {
 
 
     func testTest() -> Void {
-//        print("I am here")
 
         testVar()
     }
 
+    struct Resolution {
+        var width = 0
+        var height = 0
+    }
+    class VideoMode {
+        var resolution = Resolution()
+        var interlaced = false
+        var frameRate = 0.0
+        var name: String?
+    }
+
     func testVar() -> Void {
-        let paddedDouble = 0000123.456
-        print(paddedDouble)
+        var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3);
 
-        let oneMillion = 1_000_000
-        print(oneMillion)
+        rangeOfThreeItems.firstValue = 3;
 
-        let justOverOneMilloin = 1000_000.000_000_1
-        print(justOverOneMilloin)
-
+        print(rangeOfThreeItems)
 
     }
-
-
-
 }
 
 
-struct SimpleStructure: ExampleProtocol {
-    var simpleDescription: String = "一个简单的结构体"
-    mutating func adjust() {
-        simpleDescription += "   (adjusted)"
-    }
+struct FixedLengthRange {
+    var firstValue: Int
+    let length: Int
 }
+
+
+
 
 
 

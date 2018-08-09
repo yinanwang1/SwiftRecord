@@ -451,30 +451,6 @@ class StudyViewController: UIViewController {
 
 
     func testSimpleClass() -> Void {
-        let a = SimpleClass()
-        a.adjust()
-
-        let aDescription = a.simpleDescription
-        print("aDescription " + aDescription)
-
-        print(a.anotherProperty)
-
-
-        var b = SimpleStructure();
-        b.adjust()
-        let bDescription = b.simpleDescription
-        print("bDescription " + bDescription)
-
-        print(7.simpleDescription)
-        var number = 7
-        number.adjust()
-        print(number.simpleDescription)
-
-
-        let protocolValue = a
-
-        print(protocolValue.simpleDescription)
-        print(protocolValue.anotherProperty)
 
     }
 
