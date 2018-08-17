@@ -18,42 +18,79 @@ protocol ExampleProtocol {
 class SimpleClass: ExampleProtocol {
     var simpleDescription: String = "一个简单的类"
     var anotherProperty: Int  = 69105
+
+    fileprivate let wahah: String = "我就是我 不一样的烟火"
+
     func adjust() {
         simpleDescription += "  Now 100% adjusted"
     }
 
+    var response: String? = "sdfl"
+
+
+    init() {
+        // 构造
+    }
+
+
+
+
+
 
     func testTest() -> Void {
 
-        testVar()
+        let positive = Vector2D(x: 3.0, y: 4.0)
+        let negative = -positive
+
+        print(negative)
+
+        let alsoPositive = -negative
+
+        print(alsoPositive)
+
+
+        DispatchQueue
+
+
     }
 
-    struct Resolution {
-        var width = 0
-        var height = 0
+}
+
+struct Vector2D {
+    var x = 0.0
+    var y = 0.0
+}
+
+extension Vector2D {
+    static func + (left: Vector2D, right: Vector2D) -> Vector2D {
+        return Vector2D(x: left.x + right.x, y: left.y + right.y)
     }
-    class VideoMode {
-        var resolution = Resolution()
-        var interlaced = false
-        var frameRate = 0.0
-        var name: String?
-    }
+}
 
-    func testVar() -> Void {
-        var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3);
-
-        rangeOfThreeItems.firstValue = 3;
-
-        print(rangeOfThreeItems)
-
+extension Vector2D {
+    static prefix func - (vector: Vector2D) -> Vector2D {
+        return Vector2D(x: -vector.x, y: -vector.y)
     }
 }
 
 
-struct FixedLengthRange {
-    var firstValue: Int
-    let length: Int
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

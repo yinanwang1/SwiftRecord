@@ -12,6 +12,8 @@ typealias Testtest = Int
 
 class StudyViewController: UIViewController {
 
+    let  simpleClass:SimpleClass = SimpleClass()
+
     enum TestEnum {
         case testEnum0
         case testEnum1
@@ -110,7 +112,6 @@ class StudyViewController: UIViewController {
 
 //        testWrapped()
 
-        let  simpleClass:SimpleClass = SimpleClass()
         simpleClass.testTest()
     }
 
