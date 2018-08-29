@@ -39,17 +39,12 @@ class SimpleClass: ExampleProtocol {
 
     func testTest() -> Void {
 
-        let positive = Vector2D(x: 3.0, y: 4.0)
-        let negative = -positive
-
-        print(negative)
-
-        let alsoPositive = -negative
-
-        print(alsoPositive)
+        let value = ["test1": "12313", "test2": nil]
 
 
-        DispatchQueue
+//        print(value)
+
+        print(value["test2"] as Any)
 
 
     }
