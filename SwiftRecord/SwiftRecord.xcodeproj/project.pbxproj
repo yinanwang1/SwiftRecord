@@ -10,7 +10,6 @@
 		945A77272F474AA320EE5E8A /* Pods_SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B018DFFB8E1F49FFA55654E0 /* Pods_SwiftRecord.framework */; };
 		C638392A213782C400C37EDC /* Image.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6383929213782C400C37EDC /* Image.storyboard */; };
 		C638392C213782D300C37EDC /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638392B213782D300C37EDC /* ImageViewController.swift */; };
-		C638392E2137891C00C37EDC /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638392D2137891C00C37EDC /* LottieViewController.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
@@ -21,7 +20,6 @@
 		B018DFFB8E1F49FFA55654E0 /* Pods_SwiftRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6383929213782C400C37EDC /* Image.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Image.storyboard; sourceTree = "<group>"; };
 		C638392B213782D300C37EDC /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		C638392D2137891C00C37EDC /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			children = (
 				C6383929213782C400C37EDC /* Image.storyboard */,
 				C638392B213782D300C37EDC /* ImageViewController.swift */,
-				C638392D2137891C00C37EDC /* LottieViewController.swift */,
 			);
 			path = 201808;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C638392E2137891C00C37EDC /* LottieViewController.swift in Sources */,
 				C638392C213782D300C37EDC /* ImageViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 			);
