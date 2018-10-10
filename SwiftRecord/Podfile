@@ -2,25 +2,28 @@
 # platform :ios, '6.0'
 
 platform :ios, '11.0'
+inhibit_all_warnings!
 use_frameworks!
 
 target 'SwiftRecord' do
 
 # Swift
 # 图表
-pod 'Charts', '= 3.1.1'
+#pod 'Charts', '= 3.2.0'
 # 动画库
 pod 'lottie-ios', '= 2.5.0'
 # 约束库
-pod 'SnapKit', '= 4.0.0'
+pod 'SnapKit', '= 4.0.1'
 # 图片库
-pod 'Kingfisher', '= 4.8.1'
+pod 'Kingfisher', '= 4.10.0'
 # 网络库
 pod 'Alamofire', '= 4.7.3'
 # 键值对库
 pod 'AlamofireObjectMapper', '= 5.1.0'
 # 下拉刷新库
 pod 'ESPullToRefresh', '= 2.7'
+# JSON转换
+pod 'SwiftyJSON', '= 4.2.0'
 
 end
 
