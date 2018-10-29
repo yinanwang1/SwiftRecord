@@ -34,18 +34,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8N-02-lM4">
-                                <rect key="frame" x="166" y="109" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Sr8-pn-wQ0">
+                                <rect key="frame" x="137.5" y="114" width="94" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HgD-5s-bPv"/>
+                                    <constraint firstAttribute="width" constant="100" id="Q3R-Wx-b1X"/>
+                                </constraints>
+                            </stepper>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="CWA-Co-zED">
+                                <rect key="frame" x="16" y="194" width="343" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="v1r-x1-gtz"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.1450980392" green="0.60784313729999995" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.031372549020000001" green="0.66274509800000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="CWA-Co-zED" secondAttribute="trailing" id="4b9-Lj-7nE"/>
+                            <constraint firstItem="CWA-Co-zED" firstAttribute="leading" secondItem="L8T-R9-K8s" secondAttribute="leadingMargin" id="LHv-7E-mfp"/>
+                            <constraint firstItem="CWA-Co-zED" firstAttribute="centerX" secondItem="L8T-R9-K8s" secondAttribute="centerX" id="Wj0-CX-1w7"/>
+                            <constraint firstItem="CWA-Co-zED" firstAttribute="top" secondItem="Sr8-pn-wQ0" secondAttribute="bottom" constant="30" id="dys-l6-ChY"/>
+                            <constraint firstItem="Sr8-pn-wQ0" firstAttribute="centerX" secondItem="L8T-R9-K8s" secondAttribute="centerX" id="ffv-ci-Bq4"/>
+                            <constraint firstItem="Sr8-pn-wQ0" firstAttribute="top" secondItem="Sjm-DD-Lad" secondAttribute="top" constant="50" id="nq1-dq-DWt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sjm-DD-Lad"/>
                     </view>
                     <navigationItem key="navigationItem" id="LQL-Rs-6Yr"/>
+                    <connections>
+                        <outlet property="myProgressView" destination="CWA-Co-zED" id="sh7-d3-bSN"/>
+                        <outlet property="myStepper" destination="Sr8-pn-wQ0" id="Ftq-cb-EHd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8S-FU-ECo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
