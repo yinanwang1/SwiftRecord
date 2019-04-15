@@ -18,4 +18,22 @@ class User: NSObject {
         self.age = age
     }
 
+//    override func isEqual(_ object: Any?) -> Bool {
+//        if object is User {
+//            let tempUser = object as! User
+//            if self.name == tempUser.name
+//                && self.age == tempUser.age {
+//                return true
+//            } else {
+//                return false
+//            }
+//        } else {
+//            return false
+//        }
+//    }
+//
+//    override func hash(into hasher: inout Hasher) {
+//        hasher = Hasher
+//    }
+
 }

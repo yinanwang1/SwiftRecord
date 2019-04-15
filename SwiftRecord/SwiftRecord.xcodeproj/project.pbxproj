@@ -15,6 +15,7 @@
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
+		C6D26C9D2260248900BD93C3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D26C9C2260248900BD93C3 /* TitleViewController.swift */; };
 		C6D843A9216D9265001FED31 /* SwiftRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D843A8216D9265001FED31 /* SwiftRecordTests.swift */; };
 		C6D843B2216D937F001FED31 /* UTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6D843B1216D937F001FED31 /* UTest.storyboard */; };
 		C6D843B4216DDD26001FED31 /* UTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D843B3216DDD26001FED31 /* UTestViewController.swift */; };
@@ -43,6 +44,7 @@
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6C8534C1E128B6900E489E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6C8534E1E128B6900E489E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D26C9C2260248900BD93C3 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		C6D843A6216D9265001FED31 /* SwiftRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6D843A8216D9265001FED31 /* SwiftRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRecordTests.swift; sourceTree = "<group>"; };
 		C6D843AA216D9265001FED31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				C608B061225CC3D6008137D0 /* Html.storyboard */,
 				C608B063225CC3E7008137D0 /* HtmlViewController.swift */,
+				C6D26C9C2260248900BD93C3 /* TitleViewController.swift */,
 			);
 			path = 201904;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C6D843B4216DDD26001FED31 /* UTestViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 				C608B064225CC3E7008137D0 /* HtmlViewController.swift in Sources */,
+				C6D26C9D2260248900BD93C3 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -462,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -479,7 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2LYTD2VW3G;
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,7 +502,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 2LYTD2VW3G;
 				INFOPLIST_FILE = SwiftRecord/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.customer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

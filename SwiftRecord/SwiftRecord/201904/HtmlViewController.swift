@@ -26,6 +26,9 @@ class HtmlViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "世界那么大"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red]
+
 //        let html = "<strong>Dear Friend</strong> I hope this <i>tip</i> will be useful for <b>you</b>."
 //        let attributedString = html.htmlAttributeString(with: "Futura", fontSize: 14, colorHex: "ff0000")
 //
@@ -34,6 +37,79 @@ class HtmlViewController: UIViewController {
 //        testScanner()
 //
 //        addVolumeView()
+
+//        testString()
+
+//        testArray()
+
+//        testStride()
+
+        testSlice()
+    }
+
+    private func testSlice() {
+        var array: [Int] = []
+
+        for i in 0..<1000 {
+            array.append(i * Int(arc4random()))
+        }
+
+        let slice = array[100..<300]
+
+        for item in slice {
+            print("item is \(item)")
+        }
+
+        let result = slice.map {
+            $0 * 2
+            }.reduce(0) {
+                $0 + $1
+        }
+
+        print(result)
+    }
+
+    private func testStride() {
+        let array = stride(from: 0, to: 3, by: 0.3)
+        let array2 = stride(from: 0, through: 3, by: 0.3)
+
+        for item in array2 {
+            print("array is \(item)")
+        }
+    }
+
+    private func testArray() {
+        let user1 = User.init(name: "wang", age: 15)
+        let user2 = User.init(name: "yi", age: 45)
+        let user3 = User.init(name: "nan", age: 53)
+        let user4 = User.init(name: "nan", age: 53)
+        let user5 = User.init(name: "nan", age: 53)
+        let user6 = User.init(name: "nan", age: 53)
+        let user7 = User.init(name: "nan", age: 53)
+        let user8 = User.init(name: "nan", age: 53)
+
+        print("user1 \(user1.hashValue) && \(user1.hash)")
+        print("user2 \(user2.hashValue) && \(user2.hash)")
+        print("user3 \(user3.hashValue) && \(user3.hash)")
+        print("user4 \(user4.hashValue) && \(user4.hash)")
+        print("user5 \(user5.hashValue) && \(user5.hash)")
+        print("user6 \(user6.hashValue) && \(user6.hash)")
+        print("user7 \(user7.hashValue) && \(user7.hash)")
+        print("user8 \(user8.hashValue) && \(user8.hash)")
+
+        let array = [user1, user2, user3, user4, user5, user6, user7, user8]
+
+        print("array is \(array)")
+
+        print("array.contains(User.init(name: \"nan\", age: 53)) is \(array.contains(User.init(name: "nan", age: 53)))")
+        print("array.contains(user1) is \(array.contains(user1))")
+    }
+
+    private func testString() {
+        let content:NSString = "我 是 高 老 师 哦！"
+        print(content.applyingTransform(StringTransform.toLatin, reverse: false) ?? "")
+        print(content.applyingTransform(StringTransform.toLatin, reverse: false) ?? "")
+
     }
 
     private func addVolumeView() {

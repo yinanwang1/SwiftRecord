@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,6 +55,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-1V-JaC">
                                         <rect key="frame" x="83" y="0.0" width="42" height="30"/>
+                                        <color key="backgroundColor" name="MainColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -90,6 +92,7 @@
                                 <state key="normal" title="更换Icon"/>
                                 <connections>
                                     <action selector="clickedChangeIcon:" destination="MbW-it-KtJ" eventType="touchUpInside" id="U9I-Dv-JP8"/>
+                                    <segue destination="cRj-Lf-VdI" kind="show" id="Ftu-I5-ttO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,5 +118,25 @@
             </objects>
             <point key="canvasLocation" x="237.68115942028987" y="61.607142857142854"/>
         </scene>
+        <!--Title View Controller-->
+        <scene sceneID="8QM-K2-KOf">
+            <objects>
+                <viewController storyboardIdentifier="TitleViewController" id="cRj-Lf-VdI" customClass="TitleViewController" customModule="SwiftRecord" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LOu-MV-io8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WYf-8s-f8M"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YR9-Pt-I4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="62"/>
+        </scene>
     </scenes>
+    <resources>
+        <namedColor name="MainColor">
+            <color red="0.5" green="0.52600002288818359" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
