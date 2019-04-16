@@ -124,7 +124,7 @@ class UTestViewController: UIViewController {
 
         print("arr1 is \(arr1)");
 
-        let arr2 = array.flatMap { a -> Int? in
+        let arr2 = array.compactMap { (a) -> Int? in
             let length = a.count;
 
             guard length > 0 else {
