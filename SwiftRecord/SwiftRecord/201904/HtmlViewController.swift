@@ -44,7 +44,43 @@ class HtmlViewController: UIViewController {
 
 //        testStride()
 
-        testSlice()
+//        testSlice()
+
+//        testStringView()
+
+        testSequence()
+    }
+
+    private func testSequence() {
+        var arr = [Int]()
+
+        for i in 0 ..< 20 {
+            arr.append(i)
+        }
+
+        var arr1 = arr.prefix(5)
+        arr1[1] = 5
+
+        print("arr1 is \(arr1)")
+        print("arr is \(arr)")
+    }
+
+    private func testStringView() {
+        let cafe = "Cafe\u{301} du 🌍"
+
+        print(cafe.unicodeScalars.count)
+
+        print(cafe.unicodeScalars)
+
+        print(cafe.unicodeScalars.map{$0.value})
+
+        print(cafe.utf16.count)
+
+        print(cafe.utf16)
+
+        print(cafe.utf8.count)
+
+        print(cafe.utf8)
     }
 
     private func testSlice() {
@@ -70,7 +106,7 @@ class HtmlViewController: UIViewController {
     }
 
     private func testStride() {
-        let array = stride(from: 0, to: 3, by: 0.3)
+//        _ = stride(from: 0, to: 3, by: 0.3)
         let array2 = stride(from: 0, through: 3, by: 0.3)
 
         for item in array2 {
