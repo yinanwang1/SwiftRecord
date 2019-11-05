@@ -27,7 +27,7 @@ class HtmlViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "世界那么大"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.red]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
 
 //        let html = "<strong>Dear Friend</strong> I hope this <i>tip</i> will be useful for <b>you</b>."
 //        let attributedString = html.htmlAttributeString(with: "Futura", fontSize: 14, colorHex: "ff0000")
@@ -164,7 +164,7 @@ class HtmlViewController: UIViewController {
 
         print("self.volumeSlider?.value is \(String(describing: self.volumeSlider?.value))")
 
-        self.volumeSlider?.addTarget(self, action: #selector(updateSlider(slider:)), for: UIControlEvents.valueChanged)
+        self.volumeSlider?.addTarget(self, action: #selector(updateSlider(slider:)), for: UIControl.Event.valueChanged)
 
         print("AVAudioSession.sharedInstance().outputVolume is \(AVAudioSession.sharedInstance().outputVolume)")
 

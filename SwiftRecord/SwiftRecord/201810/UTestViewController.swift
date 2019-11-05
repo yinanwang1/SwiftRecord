@@ -22,7 +22,7 @@ class UTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.myStepper.addTarget(self, action: #selector(setupChange), for: UIControlEvents.valueChanged)
+        self.myStepper.addTarget(self, action: #selector(setupChange), for: UIControl.Event.valueChanged)
 
         self.initialProgressView()
 
@@ -54,7 +54,7 @@ class UTestViewController: UIViewController {
 
         let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(task), userInfo: nil, repeats: true)
 
-        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         self.progress = Progress.init(totalUnitCount: completed)
 
         self.progress?.addObserver(self, forKeyPath: "fractionCompleted", options: NSKeyValueObservingOptions.new, context: nil)

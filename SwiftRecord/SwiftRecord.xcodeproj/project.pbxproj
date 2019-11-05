@@ -12,6 +12,8 @@
 		C608B064225CC3E7008137D0 /* HtmlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C608B063225CC3E7008137D0 /* HtmlViewController.swift */; };
 		C64BE9D4225EE00A009397B8 /* mogu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64BE9D2225EE00A009397B8 /* mogu@3x.png */; };
 		C64BE9D5225EE00A009397B8 /* mogu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64BE9D3225EE00A009397B8 /* mogu@2x.png */; };
+		C6919BCF23702D3B0026575D /* Swift5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6919BCE23702D3B0026575D /* Swift5.storyboard */; };
+		C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6919BD223702D970026575D /* Swift5ViewController.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
@@ -39,6 +41,8 @@
 		C608B063225CC3E7008137D0 /* HtmlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlViewController.swift; sourceTree = "<group>"; };
 		C64BE9D2225EE00A009397B8 /* mogu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@3x.png"; sourceTree = "<group>"; };
 		C64BE9D3225EE00A009397B8 /* mogu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@2x.png"; sourceTree = "<group>"; };
+		C6919BCE23702D3B0026575D /* Swift5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swift5.storyboard; sourceTree = "<group>"; };
+		C6919BD223702D970026575D /* Swift5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5ViewController.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		C6919BCD23702D1F0026575D /* 201911 */ = {
+			isa = PBXGroup;
+			children = (
+				C6919BCE23702D3B0026575D /* Swift5.storyboard */,
+				C6919BD223702D970026575D /* Swift5ViewController.swift */,
+			);
+			path = 201911;
+			sourceTree = "<group>";
+		};
 		C6C853361E128B6900E489E9 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 		C6C853411E128B6900E489E9 /* SwiftRecord */ = {
 			isa = PBXGroup;
 			children = (
+				C6919BCD23702D1F0026575D /* 201911 */,
 				C608B060225CC398008137D0 /* 201904 */,
 				C6D843B0216D936D001FED31 /* 201810 */,
 				C6C853421E128B6900E489E9 /* AppDelegate.swift */,
@@ -215,12 +229,13 @@
 					C6C8533E1E128B6900E489E9 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 2LYTD2VW3G;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Manual;
 					};
 					C6D843A5216D9265001FED31 = {
 						CreatedOnToolsVersion = 10.0;
 						DevelopmentTeam = 2LYTD2VW3G;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C6C8533E1E128B6900E489E9;
 					};
@@ -254,6 +269,7 @@
 				C6D843B2216D937F001FED31 /* UTest.storyboard in Resources */,
 				C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */,
 				C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */,
+				C6919BCF23702D3B0026575D /* Swift5.storyboard in Resources */,
 				C64BE9D5225EE00A009397B8 /* mogu@2x.png in Resources */,
 				C608B062225CC3D6008137D0 /* Html.storyboard in Resources */,
 			);
@@ -275,7 +291,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRecord/Pods-SwiftRecord-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftRecord/Pods-SwiftRecord-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
@@ -298,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftRecord/Pods-SwiftRecord-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftRecord/Pods-SwiftRecord-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BD9370643B6085172DD45A7B /* [CP] Check Pods Manifest.lock */ = {
@@ -326,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */,
 				C6D843B6216DDDEB001FED31 /* User.swift in Sources */,
 				C6D843B4216DDD26001FED31 /* UTestViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
@@ -491,7 +508,7 @@
 				PROVISIONING_PROFILE = "00ac28df-ce6f-40cd-93f8-ddd4882cb185";
 				PROVISIONING_PROFILE_SPECIFIER = qeebike_dev;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -511,7 +528,7 @@
 				PROVISIONING_PROFILE = "6ac9fc94-4ee7-457a-864b-04f81c869b36";
 				PROVISIONING_PROFILE_SPECIFIER = qeebike_release;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -535,7 +552,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.SwiftRecordTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftRecord.app/SwiftRecord";
 			};
@@ -559,7 +576,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.qeebike.SwiftRecordTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftRecord.app/SwiftRecord";
 			};
