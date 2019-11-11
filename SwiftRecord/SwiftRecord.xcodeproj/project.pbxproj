@@ -10,10 +10,12 @@
 		945A77272F474AA320EE5E8A /* Pods_SwiftRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B018DFFB8E1F49FFA55654E0 /* Pods_SwiftRecord.framework */; };
 		C608B062225CC3D6008137D0 /* Html.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C608B061225CC3D6008137D0 /* Html.storyboard */; };
 		C608B064225CC3E7008137D0 /* HtmlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C608B063225CC3E7008137D0 /* HtmlViewController.swift */; };
+		C60C8A072372BD6F0054E5F2 /* Swift5Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */; };
 		C64BE9D4225EE00A009397B8 /* mogu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64BE9D2225EE00A009397B8 /* mogu@3x.png */; };
 		C64BE9D5225EE00A009397B8 /* mogu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64BE9D3225EE00A009397B8 /* mogu@2x.png */; };
 		C6919BCF23702D3B0026575D /* Swift5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6919BCE23702D3B0026575D /* Swift5.storyboard */; };
 		C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6919BD223702D970026575D /* Swift5ViewController.swift */; };
+		C6B7DD362373B37C00E831B8 /* Switft5OverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
 		C6C8534D1E128B6900E489E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C8534B1E128B6900E489E9 /* LaunchScreen.storyboard */; };
@@ -39,10 +41,12 @@
 		B018DFFB8E1F49FFA55654E0 /* Pods_SwiftRecord.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRecord.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C608B061225CC3D6008137D0 /* Html.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Html.storyboard; sourceTree = "<group>"; };
 		C608B063225CC3E7008137D0 /* HtmlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlViewController.swift; sourceTree = "<group>"; };
+		C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5Shape.swift; sourceTree = "<group>"; };
 		C64BE9D2225EE00A009397B8 /* mogu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@3x.png"; sourceTree = "<group>"; };
 		C64BE9D3225EE00A009397B8 /* mogu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@2x.png"; sourceTree = "<group>"; };
 		C6919BCE23702D3B0026575D /* Swift5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swift5.storyboard; sourceTree = "<group>"; };
 		C6919BD223702D970026575D /* Swift5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5ViewController.swift; sourceTree = "<group>"; };
+		C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switft5OverrideViewController.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C853491E128B6900E489E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			children = (
 				C6919BCE23702D3B0026575D /* Swift5.storyboard */,
 				C6919BD223702D970026575D /* Swift5ViewController.swift */,
+				C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */,
+				C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */,
 			);
 			path = 201911;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60C8A072372BD6F0054E5F2 /* Swift5Shape.swift in Sources */,
 				C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */,
 				C6D843B6216DDDEB001FED31 /* User.swift in Sources */,
+				C6B7DD362373B37C00E831B8 /* Switft5OverrideViewController.swift in Sources */,
 				C6D843B4216DDD26001FED31 /* UTestViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 				C608B064225CC3E7008137D0 /* HtmlViewController.swift in Sources */,
