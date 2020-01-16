@@ -44,6 +44,7 @@
 		C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5Shape.swift; sourceTree = "<group>"; };
 		C64BE9D2225EE00A009397B8 /* mogu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@3x.png"; sourceTree = "<group>"; };
 		C64BE9D3225EE00A009397B8 /* mogu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mogu@2x.png"; sourceTree = "<group>"; };
+		C675421023C488CB00748EEF /* LearnPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LearnPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C6919BCE23702D3B0026575D /* Swift5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swift5.storyboard; sourceTree = "<group>"; };
 		C6919BD223702D970026575D /* Swift5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5ViewController.swift; sourceTree = "<group>"; };
 		C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switft5OverrideViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 			children = (
 				C6919BCE23702D3B0026575D /* Swift5.storyboard */,
 				C6919BD223702D970026575D /* Swift5ViewController.swift */,
+				C675421023C488CB00748EEF /* LearnPlayground.playground */,
 				C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */,
 				C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */,
 			);
