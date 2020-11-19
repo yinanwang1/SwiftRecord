@@ -15,6 +15,8 @@
 		C64BE9D5225EE00A009397B8 /* mogu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C64BE9D3225EE00A009397B8 /* mogu@2x.png */; };
 		C6919BCF23702D3B0026575D /* Swift5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6919BCE23702D3B0026575D /* Swift5.storyboard */; };
 		C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6919BD223702D970026575D /* Swift5ViewController.swift */; };
+		C69B04762564FCFB00ECE7CF /* HSPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69B04752564FCFB00ECE7CF /* HSPushAnimation.swift */; };
+		C69B047A2565023400ECE7CF /* HSPopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69B04792565023400ECE7CF /* HSPopAnimation.swift */; };
 		C6B7DD362373B37C00E831B8 /* Switft5OverrideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */; };
 		C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C853421E128B6900E489E9 /* AppDelegate.swift */; };
 		C6C8534A1E128B6900E489E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C853491E128B6900E489E9 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		C675421023C488CB00748EEF /* LearnPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LearnPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C6919BCE23702D3B0026575D /* Swift5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Swift5.storyboard; sourceTree = "<group>"; };
 		C6919BD223702D970026575D /* Swift5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift5ViewController.swift; sourceTree = "<group>"; };
+		C69B04752564FCFB00ECE7CF /* HSPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSPushAnimation.swift; sourceTree = "<group>"; };
+		C69B04792565023400ECE7CF /* HSPopAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSPopAnimation.swift; sourceTree = "<group>"; };
 		C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switft5OverrideViewController.swift; sourceTree = "<group>"; };
 		C6C8533F1E128B6900E489E9 /* SwiftRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C853421E128B6900E489E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			children = (
 				C6919BCE23702D3B0026575D /* Swift5.storyboard */,
 				C6919BD223702D970026575D /* Swift5ViewController.swift */,
+				C69B04752564FCFB00ECE7CF /* HSPushAnimation.swift */,
+				C69B04792565023400ECE7CF /* HSPopAnimation.swift */,
 				C675421023C488CB00748EEF /* LearnPlayground.playground */,
 				C6B7DD352373B37C00E831B8 /* Switft5OverrideViewController.swift */,
 				C60C8A062372BD6F0054E5F2 /* Swift5Shape.swift */,
@@ -352,12 +358,14 @@
 			files = (
 				C60C8A072372BD6F0054E5F2 /* Swift5Shape.swift in Sources */,
 				C6919BD323702D970026575D /* Swift5ViewController.swift in Sources */,
+				C69B04762564FCFB00ECE7CF /* HSPushAnimation.swift in Sources */,
 				C6D843B6216DDDEB001FED31 /* User.swift in Sources */,
 				C6B7DD362373B37C00E831B8 /* Switft5OverrideViewController.swift in Sources */,
 				C6D843B4216DDD26001FED31 /* UTestViewController.swift in Sources */,
 				C6C853431E128B6900E489E9 /* AppDelegate.swift in Sources */,
 				C608B064225CC3E7008137D0 /* HtmlViewController.swift in Sources */,
 				C6D26C9D2260248900BD93C3 /* TitleViewController.swift in Sources */,
+				C69B047A2565023400ECE7CF /* HSPopAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

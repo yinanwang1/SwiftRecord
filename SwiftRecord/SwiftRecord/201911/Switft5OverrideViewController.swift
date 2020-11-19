@@ -8,39 +8,85 @@
 
 import UIKit
 
-class Switft5OverrideViewController: UIViewController {
+class Switft5OverrideViewController: UIViewController, UINavigationControllerDelegate {
     
-    var imageUrl: String
+    var interactiveTransition: UIPercentDrivenInteractiveTransition?
 
-    init(imageUrl: String) {
-        self.imageUrl = imageUrl
-
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        self.imageUrl = ""
-        super.init(coder: coder)
-    }
-
+    @IBOutlet weak var testButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let coder = NSCoder.init()
-        print("coder is \(coder)")
-
-        print("imageUrl is \(self.imageUrl)")
+     
+        let pan = UIPanGestureRecognizer.init()
+        pan.addTarget(self, action: #selector(panGestureRecognizerAction(pan:)))
+        self.view.addGestureRecognizer(pan)
+        
+        let testImage = UIImage.init(named: "test")
+        
+//        self.testImageView.image = testImage
+        
+        self.testButton.setBackgroundImage(testImage?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: UIControl.State.normal)
+        self.testButton.tintColor = UIColor.orange
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationController?.delegate = self
     }
-    */
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationController.Operation.pop {
+            return HSPopAnimation.init()
+        }
+        
+        return nil
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning?
+    {
+        if animationController is HSPopAnimation {
+            return self.interactiveTransition
+        }
+        
+        return nil
+    }
+    
+    @IBAction func onClickPopBtn(_ sender: Any) {
+        print("123")
+//        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @objc
+    private func panGestureRecognizerAction(pan: UIPanGestureRecognizer) {
+        var process = pan.translation(in: self.view).x / UIScreen.main.bounds.size.width
+        process = min(1.0, max(0.0, process))
+        
+        print("process is \(process)")
+        
+        if pan.state == UIPanGestureRecognizer.State.began {
+            print("began")
+            self.interactiveTransition = UIPercentDrivenInteractiveTransition.init()
+            
+            self.navigationController?.popViewController(animated: true)
+        } else if pan.state == UIPanGestureRecognizer.State.changed {
+            print("changed")
+            self.interactiveTransition?.update(process)
+        } else if pan.state == UIPanGestureRecognizer.State.ended || pan.state == UIGestureRecognizer.State.cancelled {
+            print("ended")
+            if process > 0.3 {
+                self.interactiveTransition?.finish()
+            } else {
+                self.interactiveTransition?.cancel()
+            }
+            
+            self.interactiveTransition = nil
+        }
+    }
 
 }
